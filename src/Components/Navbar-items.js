@@ -1,10 +1,11 @@
 import React from "react";
+import "./NavBar.css";
 
 export default function Navbaritems(props) {
   console.log("Hey props", props);
   return (
-    // <div className="topnav">
-    <a href={props.path}>{props.item}</a>
-    // </div>
+    <a className="topnav-links" href={props.path}>
+      {props.item}
+    </a>
   );
 }
