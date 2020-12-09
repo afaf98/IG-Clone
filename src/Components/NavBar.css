@@ -9,7 +9,7 @@ body {
   overflow: hidden;
   display: flex;
   /* position: fixed; */
-  height: 11vh;
+  height: 8vh;
 }
 
 .topnav-logo {

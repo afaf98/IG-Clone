@@ -1,8 +1,9 @@
 .footer {
-  height: 10vh;
+  height: 8vh;
   background-color: lightgrey;
   display: flex;
   flex-direction: row;
+  margin-bottom: 0;
 }
 
 .footer-left {
@@ -23,8 +24,26 @@
 
 .footer-center {
   width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .footer-right {
   width: 33%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+}
+
+.dropdown-footer {
+  /* TO STYLE THE DROPDOWN IN THE FOOTER */
+  color: white;
+  margin-right: 5px;
+  padding: 5px;
+  background-color: lightgray;
+  border-color: grey;
+  border-radius: 5px;
 }

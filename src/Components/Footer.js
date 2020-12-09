@@ -1,6 +1,10 @@
 import React from "react";
 import "./Footer.css";
 
+// import ReactDOM from "react-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -13,8 +17,23 @@ export default function Footer() {
           Search
         </a>
       </div>
-      <div className="footer-center"></div>
-      <div className="footer-right"></div>
+      <div className="footer-center">
+        <h2>
+          <FontAwesomeIcon icon={faCoffee} />
+        </h2>
+      </div>
+      <div className="footer-right">
+        <div>
+          <select className="dropdown-footer" name="Language" id="Language">
+            <option value="English">English</option>
+            <option value="Italian">Italian</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Arab">Arab</option>
+          </select>
+        </div>
+        {"  "} | {"  "}
+        ©Copyright 2020
+      </div>
     </footer>
   );
 }
