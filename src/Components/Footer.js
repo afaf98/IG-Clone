@@ -3,7 +3,7 @@ import "./Footer.css";
 
 // import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faExpand } from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
@@ -18,9 +18,7 @@ export default function Footer() {
         </a>
       </div>
       <div className="footer-center">
-        <h2>
-          <FontAwesomeIcon icon={faCoffee} />
-        </h2>
+        <FontAwesomeIcon icon={faExpand} size="lg" />
       </div>
       <div className="footer-right">
         <div>
