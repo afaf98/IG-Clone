@@ -8,10 +8,10 @@ body {
   background-color: #69a1f3;
   overflow: hidden;
   display: flex;
-  /* position: fixed; */
+  position: fixed;
+  top: 0px;
   height: 8vh;
-  /* filter: drop-shadow(0 0 2rem white); */
-  box-shadow: 20px 5px 5px white;
+  z-index: 1;
 }
 
 .topnav-logo-container {
