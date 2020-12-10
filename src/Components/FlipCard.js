@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "../images/tryout.jpg";
 import "./FlipCard.css";
 
 export default function FlipCard(props) {

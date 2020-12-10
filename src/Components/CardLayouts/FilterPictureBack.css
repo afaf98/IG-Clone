@@ -1,0 +1,38 @@
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 2%;
+}
+
+.filter-chrome-back {
+  color: Grey;
+  border-radius: 15px;
+  padding: 5%;
+  background-color: gold;
+  margin: 4%;
+}
+
+.filter-sepia-back {
+  color: Grey;
+  border-radius: 15px;
+  padding: 5%;
+  background-color: gold;
+  margin: 4%;
+  border: 2px solid red;
+}
+.filter-blackwhite-back {
+  color: Grey;
+  border-radius: 15px;
+  padding: 5%;
+  background-color: gold;
+  margin: 4%;
+  font-size: 1rem;
+}
+
+.flip-card-img-filter {
+  filter: url("#posterize") saturate(0.9) contrast(0.6) brightness(1.8)
+    hue-rotate(56deg) opacity(0.69);
+  margin-top: 4%;
+}

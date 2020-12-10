@@ -1,0 +1,27 @@
+.flip-card-img-upperline-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-img-underline-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-img-upperline {
+  margin: 4%;
+}
+
+.flip-card-img-underline {
+  margin: 5%;
+}
+
+.picture-choose {
+  border: 2px solid red;
+  padding: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

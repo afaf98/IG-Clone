@@ -1,0 +1,21 @@
+.flip-card-img-upperline-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-img-underline-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-img-upperline {
+  margin: 4%;
+}
+
+.flip-card-img-underline {
+  margin: 4%;
+}
