@@ -12,11 +12,17 @@
   background-color: #c5dcfd;
 }
 
-.flip-card-underText {
+.card-underText {
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .flip-card {

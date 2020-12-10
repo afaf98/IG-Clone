@@ -16,9 +16,7 @@ export default function FlipCard(props) {
           </div>
         </div>
       </div>
-      <div className="card-underText">
-        <h2>{props.text}</h2>
-      </div>
+      <div className="card-underText">{props.text}</div>
     </div>
   );
 }
