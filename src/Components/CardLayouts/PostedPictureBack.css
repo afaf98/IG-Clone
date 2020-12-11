@@ -1,0 +1,84 @@
+.description-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.description {
+  font-family: cursive;
+  color: black;
+  background-color: lightgrey;
+  padding: 3px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.comment-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* .comment {
+  font-family: cursive;
+  color: black;
+  background-color: lightgrey;
+  /* padding: 2px; */
+/* border-radius: 3px; */
+/* margin-top: 1rem; */
+
+/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}*/
+
+.comment {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 10px;
+  width: 35px;
+  background: lightblue;
+  /* border-radius: 40px; */
+  padding: 10px;
+  text-align: center;
+  color: #000;
+  margin-right: 2rem;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  /* margin-top: 1rem; */
+}
+
+.comment-bottom-left:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 12px solid lightblue;
+  border-right: 6px solid transparent;
+  border-top: 6px solid lightblue;
+  border-bottom: 10px solid transparent;
+  right: -10px;
+  top: 0px;
+}
+
+.heart-back-description {
+  color: red;
+  margin-left: 2rem;
+}
+
+.heart-back-comment {
+  color: red;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.flip-card-img-filter {
+  /* filter: url("#posterize") saturate(0.9) contrast(0.6) brightness(1.8)
+    hue-rotate(56deg) opacity(0.69); */
+  filter: url("#x-rays") saturate(0.6) opacity(0.54) sepia(0.14);
+  /* margin-top: 4%; */
+}
