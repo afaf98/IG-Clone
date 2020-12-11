@@ -1,0 +1,28 @@
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 2%;
+}
+
+.filter-button {
+  border-radius: 15px;
+  padding: 5%;
+  margin: 4%;
+  width: 40px;
+  border: 1px solid lightgrey;
+}
+.filter-chrome-front {
+  color: Grey;
+  background-color: #ff6200;
+}
+
+.filter-sepia-front {
+  color: Grey;
+  background-color: #ffd081;
+}
+.filter-blackwhite-front {
+  color: Grey;
+  background: linear-gradient(0.25turn, Grey, white);
+}

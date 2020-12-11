@@ -1,0 +1,42 @@
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 2%;
+}
+.filter-button {
+  border-radius: 15px;
+  padding: 5%;
+  margin: 4%;
+  width: 40px;
+}
+
+.filter-chrome-back {
+  color: Grey;
+  background-color: #ff6200;
+  filter: blur(1px);
+  transform: scale(0.8);
+  border: 1px solid lightgrey;
+}
+
+.filter-sepia-back {
+  color: Grey;
+  background-color: #ffd081;
+  border: 2px solid red;
+  transform: scale(1.2);
+}
+.filter-blackwhite-back {
+  color: Grey;
+  background: linear-gradient(0.25turn, Grey, white);
+  filter: blur(1px);
+  transform: scale(0.8);
+  border: 1px solid lightgrey;
+}
+
+.flip-card-img-filter {
+  /* filter: url("#posterize") saturate(0.9) contrast(0.6) brightness(1.8)
+    hue-rotate(56deg) opacity(0.69); */
+  filter: url("#x-rays") saturate(0.6) opacity(0.54) sepia(0.14);
+  /* margin-top: 4%; */
+}
