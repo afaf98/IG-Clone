@@ -9,7 +9,7 @@
   font-family: cursive;
   color: black;
   background-color: lightgrey;
-  padding: 2px;
+  padding: 3px;
   border-radius: 3px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -32,33 +32,38 @@
 }*/
 
 .comment {
+  position: relative;
   font-family: sans-serif;
   font-size: 16px;
   line-height: 10px;
   width: 35px;
   background: lightblue;
-  border-radius: 40px;
+  /* border-radius: 40px; */
   padding: 10px;
   text-align: center;
   color: #000;
   margin-right: 2rem;
   margin-left: 1.5rem;
   margin-top: 0.5rem;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
   /* margin-top: 1rem; */
 }
 
-/* .comment-bottom-left :before {
+.comment-bottom-left:after {
   content: "";
-  width: 2px;
-  height: 2px;
+  width: 0px;
+  height: 0px;
   position: absolute;
-  border-left: 24px solid lightblue;
-  border-right: 12px solid transparent;
-  border-top: 12px solid lightblue;
-  border-bottom: 20px solid transparent;
-  left: 0px;
-  bottom: 0;
-} */
+  border-left: 12px solid lightblue;
+  border-right: 6px solid transparent;
+  border-top: 6px solid lightblue;
+  border-bottom: 10px solid transparent;
+  right: -10px;
+  top: 0px;
+}
 
 .heart-back-description {
   color: red;

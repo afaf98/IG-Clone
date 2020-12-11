@@ -8,7 +8,7 @@ export default function SelectPictureFront() {
     <div>
       <div className="flip-card-img-upperline-container">
         <img
-          src="https://via.placeholder.com/125x125"
+          src="https://images.unsplash.com/photo-1606012675698-490beaff9335?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=125&ixlib=rb-1.2.1&q=80&w=125"
           alt="Avatar"
           className="flip-card-img-filter flip-card-img-upperline"
           height="200"
