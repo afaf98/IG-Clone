@@ -9,11 +9,11 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-left">
-        <a className="footer-left-links" href="">
+        <a className="footer-left-links" href="/contact">
           Contact Us
         </a>
         {"  "}|{"  "}
-        <a className="footer-left-links" href="">
+        <a className="footer-left-links" href="/search">
           Search
         </a>
       </div>
