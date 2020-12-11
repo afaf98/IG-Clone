@@ -14,17 +14,22 @@
 
 .filter-chrome-back {
   color: Grey;
-  background-color: gold;
+  background-color: #ff6200;
+  filter: blur(1px);
+  transform: scale(0.8);
 }
 
 .filter-sepia-back {
   color: Grey;
-  background-color: gold;
+  background-color: #ffd081;
   border: 2px solid red;
+  transform: scale(1.2);
 }
 .filter-blackwhite-back {
   color: Grey;
-  background-color: gold;
+  background: linear-gradient(0.25turn, Grey, white);
+  filter: blur(1px);
+  transform: scale(0.8);
 }
 
 .flip-card-img-filter {

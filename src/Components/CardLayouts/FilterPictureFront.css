@@ -14,14 +14,14 @@
 }
 .filter-chrome-front {
   color: Grey;
-  background-color: gold;
+  background-color: #ff6200;
 }
 
 .filter-sepia-front {
   color: Grey;
-  background-color: gold;
+  background-color: #ffd081;
 }
 .filter-blackwhite-front {
   color: Grey;
-  background-color: gold;
+  background: linear-gradient(0.25turn, Grey, white);
 }
