@@ -9,7 +9,7 @@ export default function Homepage() {
   return (
     <div className="flip-card-container">
       <FlipCard
-        text="Choose your favorite picture"
+        text="Pick your picture"
         LayoutFront={SelectPictureFront}
         LayoutBack={SelectPictureBack}
       />

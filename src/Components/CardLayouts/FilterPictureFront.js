@@ -14,9 +14,9 @@ export default function SelectPictureFront() {
         />
       </div>
       <div className="filter-container">
-        <div className="filter-chrome-front">C</div>
-        <div className="filter-sepia-front">S</div>
-        <div className="filter-blackwhite-front">B&W</div>
+        <div className="filter-chrome-front filter-button ">C</div>
+        <div className="filter-sepia-front filter-button ">S</div>
+        <div className="filter-blackwhite-front filter-button ">B&W</div>
       </div>
     </div>
   );

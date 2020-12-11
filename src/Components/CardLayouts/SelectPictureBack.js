@@ -8,32 +8,35 @@ export default function SelectPictureFront() {
         <img
           src="https://via.placeholder.com/125x125"
           alt="Avatar"
-          className="flip-card-img-upperline"
-          height="110"
-          width="110"
+          className="flip-card-img-upperline picture-not-selected"
+          height="125"
+          width="125"
         />
-        <img
-          src="https://via.placeholder.com/125x125"
-          alt="Avatar"
-          className="picture-choose"
-          height="140"
-          width="140"
-        />
+        <div className="picture-selected-container flip-card-img-upperline">
+          <div className="selected-border"></div>
+          <img
+            src="https://via.placeholder.com/125x125"
+            alt="Avatar"
+            className="picture-choose "
+            height="125"
+            width="125"
+          />
+        </div>
       </div>
       <div className="flip-card-img-underline-container">
         <img
           src="https://via.placeholder.com/125x125"
           alt="Avatar"
-          className="flip-card-img-underline"
-          height="110"
-          width="110"
+          className="flip-card-img-underline picture-not-selected"
+          height="125"
+          width="125"
         />
         <img
           src="https://via.placeholder.com/125x125"
           alt="Avatar"
-          className="flip-card-img-underline"
-          height="110"
-          width="110"
+          className="flip-card-img-underline picture-not-selected"
+          height="125"
+          width="125"
         />
       </div>
     </div>
