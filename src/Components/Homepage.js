@@ -4,6 +4,8 @@ import SelectPictureFront from "./CardLayouts/SelectPictureFront";
 import SelectPictureBack from "./CardLayouts/SelectPictureBack";
 import FilterPictureFront from "./CardLayouts/FilterPictureFront";
 import FilterPictureBack from "./CardLayouts/FilterPictureBack";
+import PostedPictureFront from "./CardLayouts/PostedPictureFront";
+import PostedPictureBack from "./CardLayouts/PostedPictureBack";
 
 export default function Homepage() {
   return (
@@ -20,8 +22,8 @@ export default function Homepage() {
       />
       <FlipCard
         text="Ready to be posted!"
-        LayoutFront={SelectPictureFront}
-        LayoutBack={SelectPictureBack}
+        LayoutFront={PostedPictureFront}
+        LayoutBack={PostedPictureBack}
       />
     </div>
   );

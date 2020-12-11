@@ -11,6 +11,7 @@
   padding: 5%;
   margin: 4%;
   width: 40px;
+  border: 1px solid lightgrey;
 }
 .filter-chrome-front {
   color: Grey;

@@ -1,0 +1,28 @@
+.description-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+  background-color: white;
+}
+
+.description {
+  font-family: cursive;
+  color: black;
+  background-color: lightgrey;
+  padding: 2px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.heart {
+  color: lightgrey;
+  margin-left: 2rem;
+}
+
+.flip-card-img-filter {
+  /* filter: url("#posterize") saturate(0.9) contrast(0.6) brightness(1.8)
+    hue-rotate(56deg) opacity(0.69); */
+  filter: url("#x-rays") saturate(0.6) opacity(0.54) sepia(0.14);
+  /* margin-top: 4%; */
+}
