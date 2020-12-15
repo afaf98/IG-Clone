@@ -40,6 +40,21 @@
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
+@media only screen and (max-width: 600px) {
+  .flip-card-container {
+    flex-direction: column;
+    height: fit-content;
+    padding-top: 11vh;
+    padding-bottom: 3vh;
+  }
+  .card {
+    margin-bottom: 2rem;
+  }
+  .card:last-child {
+    margin-bottom: 0;
+  }
+}
+
 /* This container is needed to position the front and back side */
 .flip-card-inner {
   width: 100%;
