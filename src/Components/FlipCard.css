@@ -101,3 +101,10 @@
   color: white;
   transform: rotateY(180deg);
 }
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .flip-card-container {
+    flex-wrap: wrap;
+    align-content: space-evenly;
+  }
+}
