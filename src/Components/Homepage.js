@@ -1,5 +1,5 @@
 import React from "react";
-import FlipCard from "./FlipCard";
+import FlipCard from "./FlipCard/FlipCard";
 import SelectPictureFront from "./CardLayouts/SelectPictureFront";
 import SelectPictureBack from "./CardLayouts/SelectPictureBack";
 import FilterPictureFront from "./CardLayouts/FilterPictureFront";
