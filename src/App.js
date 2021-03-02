@@ -3,7 +3,7 @@ import Footer from "./Components/Footer/Footer";
 import HomePage from "./Components/Homepage";
 import NavBar from "./Components/Navbar/NavBar";
 import { Switch, Route } from "react-router-dom";
-import SignupPage from "./Components/Signup/SignupPage";
+import SignupPage from "./Components/Auth/SignupPage";
 
 function App() {
   return (

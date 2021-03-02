@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
-import "./SignupPage.css";
+import profileSchema from "../../validators/profileSchema";
+import loginSchema from "../../validators/loginSchema";
 
 const schema = yup.object().shape({
-  firstName: yup.string().required(),
-  lastName: yup.string().required(),
-  email: yup.string().email().required(),
-  password: yup.string().min(8).required(),
+  ...profileSchema,
+  ...loginSchema,
 });
 
-export default function SignupPage() {
+export default function SignUpForm() {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
   const onSubmit = (data) => console.log(data);
-
   return (
-    <div className="signupPage">
+    <div>
       <form
         className="form-container text-format"
         onSubmit={handleSubmit(onSubmit)}
@@ -32,7 +29,7 @@ export default function SignupPage() {
           name="firstName"
           ref={register}
         />
-        <p>{errors.firstName?.message}</p>
+        <p id="firstNameError">{errors.firstName?.message}</p>
         Last name:{" "}
         <input
           type="text"
@@ -57,13 +54,7 @@ export default function SignupPage() {
           ref={register}
         />
         <p>{errors.password?.message}</p>
-        <input type="submit" className="submit-button" value="submit" />
-      </form>
-      <form className="form-container text-format">
-        <h2>Login here!</h2>
-        Email : <input type="text" className="input-field" />
-        Password : <input type="text" className="input-field" />
-        <input type="button" value="Submit" className="submit-button" />
+        <input type="submit" className="submit-button" value="Signup" />
       </form>
     </div>
   );
