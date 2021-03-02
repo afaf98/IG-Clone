@@ -19,6 +19,7 @@ export default function SignUpForm() {
     <div>
       <form
         className="form-container text-format"
+        id="signup-form"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h2>Signup here!</h2>

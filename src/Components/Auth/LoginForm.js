@@ -16,6 +16,7 @@ export default function LoginForm() {
     <div>
       <form
         className="form-container text-format"
+        id="login-form"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h2>Login here!</h2>
