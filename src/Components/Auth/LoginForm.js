@@ -3,13 +3,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import loginSchema from "../../validators/loginSchema";
-import getUser from "../../databaseCalls/login";
+import getUser from "../../services/login";
 import { Redirect } from "react-router-dom";
 
 const schema = yup.object().shape(loginSchema);
 
 export default function LoginForm() {
-  const [status, setStatus] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState(null);
   const { register, handleSubmit, errors } = useForm({
@@ -19,9 +18,7 @@ export default function LoginForm() {
     const response = await getUser(data);
     if (response.error) {
       setError(response.error);
-      setStatus(response.status);
     } else {
-      setStatus(response.status);
       setMessage(response.message);
     }
   };
