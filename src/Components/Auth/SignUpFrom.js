@@ -16,47 +16,40 @@ export default function SignUpForm() {
   });
   const onSubmit = (data) => console.log(data);
   return (
-    <div>
-      <form
-        className="form-container text-format"
-        id="signup-form"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <h2>Signup here!</h2>
-        First name:{" "}
-        <input
-          type="text"
-          className="input-field"
-          name="firstName"
-          ref={register}
-        />
-        <p id="firstNameError">{errors.firstName?.message}</p>
-        Last name:{" "}
-        <input
-          type="text"
-          className="input-field"
-          name="lastName"
-          ref={register}
-        />
-        <p>{errors.lastName?.message}</p>
-        Email :{" "}
-        <input
-          type="email"
-          className="input-field"
-          name="email"
-          ref={register}
-        />
-        <p>{errors.email?.message}</p>
-        Password :{" "}
-        <input
-          type="password"
-          className="input-field"
-          name="password"
-          ref={register}
-        />
-        <p>{errors.password?.message}</p>
-        <input type="submit" className="submit-button" value="Signup" />
-      </form>
-    </div>
+    <form
+      className="form-container text-format"
+      id="signup-form"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <h2>Signup here!</h2>
+      First name:{" "}
+      <input
+        type="text"
+        className="input-field"
+        name="firstName"
+        ref={register}
+      />
+      <p id="firstNameError">{errors.firstName?.message}</p>
+      Last name:{" "}
+      <input
+        type="text"
+        className="input-field"
+        name="lastName"
+        ref={register}
+      />
+      <p>{errors.lastName?.message}</p>
+      Email :{" "}
+      <input type="email" className="input-field" name="email" ref={register} />
+      <p>{errors.email?.message}</p>
+      Password :{" "}
+      <input
+        type="password"
+        className="input-field"
+        name="password"
+        ref={register}
+      />
+      <p>{errors.password?.message}</p>
+      <input type="submit" className="submit-button" value="Signup" />
+    </form>
   );
 }
