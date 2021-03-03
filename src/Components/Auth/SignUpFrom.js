@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import profileSchema from "../../validators/profileSchema";
 import loginSchema from "../../validators/loginSchema";
+import newUser from "../../services/signup";
 
 const schema = yup.object().shape({
   ...profileSchema,
@@ -11,10 +12,19 @@ const schema = yup.object().shape({
 });
 
 export default function SignUpForm() {
+  const [feedback, setFeedback] = useState({ status: null, message: "" });
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const response = await newUser(data);
+    console.log("Response signup", response);
+    if (response.error) {
+      setFeedback({ status: "Error", message: response.error });
+    } else {
+      setFeedback({ status: "Success", message: response.message });
+    }
+  };
   return (
     <form
       className="form-container text-format"
@@ -22,6 +32,11 @@ export default function SignUpForm() {
       onSubmit={handleSubmit(onSubmit)}
     >
       <h2>Signup here!</h2>
+      {feedback.status && (
+        <p className={feedback.status === "Success" ? "success" : "error"}>
+          {feedback.message}
+        </p>
+      )}
       First name:{" "}
       <input
         type="text"
