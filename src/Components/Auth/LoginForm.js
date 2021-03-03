@@ -5,6 +5,7 @@ import * as yup from "yup";
 import loginSchema from "../../validators/loginSchema";
 import getUser from "../../services/login";
 import { Redirect } from "react-router-dom";
+import useToken from "../../context/useToken";
 
 const schema = yup.object().shape(loginSchema);
 
@@ -13,15 +14,22 @@ export default function LoginForm() {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
+  const { token, setToken } = useToken();
+  console.log("token", token);
   const onSubmit = async (data) => {
     const response = await getUser(data);
     if (response.error) {
       setFeedback({ status: "Error", message: response.error });
     } else {
       setFeedback({ status: "Success", message: response.message });
+      localStorage.setItem("token", response.token);
+      setToken(response.token);
     }
   };
 
+  if (token) {
+    return <Redirect to="/home" />;
+  }
   return (
     <form
       className="form-container text-format"
