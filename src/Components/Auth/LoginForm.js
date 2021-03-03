@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import loginSchema from "../../validators/loginSchema";
 import getUser from "../../databaseCalls/login";
+import { Redirect } from "react-router-dom";
 
 const schema = yup.object().shape(loginSchema);
 
@@ -32,6 +33,9 @@ export default function LoginForm() {
       onSubmit={handleSubmit(onSubmit)}
     >
       <h2>Login here!</h2>
+      <p className={!message ? "display-none" : "error"}>
+        {message ? <Redirect to="/home" /> : "Check out what's new today!"}
+      </p>
       Email :{" "}
       <input type="email" name="email" className="input-field" ref={register} />
       <p>{errors.email?.message}</p>
