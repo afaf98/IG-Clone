@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import loginSchema from "../../validators/loginSchema";
-import getUser from "../../services/login";
 import { Redirect } from "react-router-dom";
 import useToken from "../../context/useToken";
 
@@ -14,17 +13,11 @@ export default function LoginForm() {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
-  const { token, setToken } = useToken();
+  const { token, login } = useToken();
   console.log("token", token);
   const onSubmit = async (data) => {
-    const response = await getUser(data);
-    if (response.error) {
-      setFeedback({ status: "Error", message: response.error });
-    } else {
-      setFeedback({ status: "Success", message: response.message });
-      localStorage.setItem("token", response.token);
-      setToken(response.token);
-    }
+    const { status, message } = await login(data);
+    setFeedback({ status: status, message: message });
   };
 
   if (token) {
