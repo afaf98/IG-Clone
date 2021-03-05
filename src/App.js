@@ -6,6 +6,7 @@ import { Switch, Route } from "react-router-dom";
 import SignupPage from "./Components/Auth/SignupPage";
 import HomeUser from "./Components/HomeUser/HomeUser";
 import { TokenProvider } from "./context/useToken";
+import UploadPicture from "./Components/UploadPicture/UploadPicture";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/signup" component={SignupPage} />
           <Route path="/login" component={SignupPage} />
-          <Route path="/home" component={HomeUser} />
+          <Route path="/profile" component={HomeUser} />
+          <Route path="/upload" component={UploadPicture} />
         </Switch>
       </TokenProvider>
     </div>
