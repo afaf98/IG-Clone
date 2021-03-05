@@ -4,7 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import profileSchema from "../../validators/profileSchema";
 import loginSchema from "../../validators/loginSchema";
-import newUser from "../../services/signup";
+import { Redirect } from "react-router-dom";
+import useToken from "../../context/useToken";
 
 const schema = yup.object().shape({
   ...profileSchema,
@@ -16,15 +17,29 @@ export default function SignUpForm() {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
+  const { token, auth } = useToken();
+  console.log("token", token);
   const onSubmit = async (data) => {
-    const response = await newUser(data);
-    console.log("Response signup", response);
-    if (response.error) {
-      setFeedback({ status: "Error", message: response.error });
-    } else {
-      setFeedback({ status: "Success", message: response.message });
-    }
+    const { status, message } = await auth(data, "signUp");
+    setFeedback({ status: status, message: message });
   };
+
+  if (token) {
+    return <Redirect to="/home" />;
+  }
+  // const [feedback, setFeedback] = useState({ status: null, message: "" });
+  // const { register, handleSubmit, errors } = useForm({
+  //   resolver: yupResolver(schema),
+  // });
+  // const onSubmit = async (data) => {
+  //   const response = await newUser(data);
+  //   console.log("Response signup", response);
+  //   if (response.error) {
+  //     setFeedback({ status: "Error", message: response.error });
+  //   } else {
+  //     setFeedback({ status: "Success", message: response.message });
+  //   }
+  // };
   return (
     <form
       className="form-container text-format"

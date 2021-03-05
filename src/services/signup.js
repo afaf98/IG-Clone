@@ -10,6 +10,7 @@ export default async function newUser(data) {
     return {
       status: response.status,
       message: response.data.message,
+      token: response.data.token,
     };
   } catch (error) {
     console.error(error.response);

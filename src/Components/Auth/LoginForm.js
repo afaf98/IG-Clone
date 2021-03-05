@@ -13,10 +13,11 @@ export default function LoginForm() {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
-  const { token, login } = useToken();
+  const { token, auth } = useToken();
   console.log("token", token);
   const onSubmit = async (data) => {
-    const { status, message } = await login(data);
+    console.log(data);
+    const { status, message } = await auth(data, "login");
     setFeedback({ status: status, message: message });
   };
 
