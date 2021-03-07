@@ -19,9 +19,12 @@ export function TokenProvider(props) {
       return { status: "Success", message: response.message };
     }
   };
-
+  const logout = () => {
+    setToken(null);
+    localStorage.removeItem("token");
+  };
   return (
-    <TokenContext.Provider value={{ token: token, auth: auth }}>
+    <TokenContext.Provider value={{ token: token, auth: auth, logout: logout }}>
       {props.children}
     </TokenContext.Provider>
   );
