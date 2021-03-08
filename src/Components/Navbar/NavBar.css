@@ -62,7 +62,7 @@ body {
   filter: drop-shadow(0 0 0.75rem white);
 }
 
-.topnav-logout {
+.topnav-button {
   font-size: 17px;
   color: white;
   font-weight: 600;
