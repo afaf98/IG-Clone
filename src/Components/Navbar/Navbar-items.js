@@ -1,7 +1,6 @@
 import React from "react";
 import "./NavBar.css";
 import useToken from "../../context/useToken";
-import { Redirect } from "react-router";
 import { useHistory } from "react-router-dom";
 
 export default function Navbaritems(props) {
@@ -16,9 +15,14 @@ export default function Navbaritems(props) {
       history.push(props.path);
     }
   }
+
   return (
     <button
-      className={props.item === "About Us" ? "topnav-links" : "topnav-logout"}
+      className={
+        ["Logout", "Login"].includes(props.item)
+          ? "topnav-button"
+          : "topnav-links"
+      }
       onClick={handleOnClick}
     >
       {props.item}
