@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   /* color: #216ddc */
-  background-color: #c0d1eb;
+  background-color: white;
 }
 .image-preview-box {
   display: flex;
@@ -29,22 +29,27 @@
 .form {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
   height: 50vh;
   margin-top: 200px;
 }
 .file-input {
-  background-color: rgb(255, 249, 249);
-  margin-left: 20px;
-  width: 35vw;
-  height: 25px;
+  background-color: #a9c9fa;
+  width: 31.5vw;
+  height: 26px;
+  border-radius: 3px;
+  padding-bottom: 5px;
+  font-size: 19px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
 }
 .upload-button {
   width: 80px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #397ee6;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border-radius: 3px;
   border-width: thin;
   height: 30px;
@@ -56,4 +61,43 @@
   height: 150px;
   width: 150px;
   margin-top: -100px;
+}
+.take-photo-button {
+  width: 120px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #397ee6;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  border-width: thin;
+  height: 30px;
+}
+.video-display {
+  margin-top: -50px;
+  margin-bottom: 25px;
+  width: 42vw;
+  height: 60vh;
+  border-radius: 4px;
+  background-color: transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.title {
+  margin-top: 70px;
+  margin-bottom: -70px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #5a5858;
+}
+.display-none {
+  display: none;
+}
+.success {
+  color: rgb(215, 240, 180);
+  background-color: rgb(140, 199, 51);
+  font-weight: normal;
+  font-size: 17px;
+  width: 300px;
+  height: 22px;
+  text-align: center;
+  border-radius: 4px;
 }

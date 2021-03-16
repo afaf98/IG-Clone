@@ -14,7 +14,6 @@ export default function getVideo(videoRef) {
 export const paintToCanvas = (videoRef, photoRef) => {
   let video = videoRef.current;
   let photo = photoRef.current;
-  console.log("Video", video);
   let ctx = photo.getContext("2d");
 
   const width = 320;
@@ -27,15 +26,24 @@ export const paintToCanvas = (videoRef, photoRef) => {
   }, 200);
 };
 
-export const takePhoto = (photoRef, stripRef) => {
+export const takePhoto = async (photoRef, stripRef) => {
   let photo = photoRef.current;
   let strip = stripRef.current;
   const data = photo.toDataURL("image/jpg");
-  // console.log("What do i got here", data);
-  return data;
-  // const link = document.createElement("a");
-  // link.href = data;
-  // link.setAttribute("download", "myWebcam");
-  // link.innerHTML = `<img src='${data}' alt='thumbnail'/>`;
-  // strip.insertBefore(link, strip.firstChild);
+  const res = await fetch(data);
+  const blob = await res.blob();
+  const newFile = new File([blob], `${new Date()}`, { type: "image/png" });
+  return newFile;
+};
+
+export const stop = (videoRef) => {
+  const stream = videoRef.current.srcObject;
+  const tracks = stream.getTracks();
+
+  for (let i = 0; i < tracks.length; i++) {
+    let track = tracks[i];
+    track.stop();
+  }
+
+  videoRef.current.srcObject = null;
 };

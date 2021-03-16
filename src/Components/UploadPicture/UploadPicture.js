@@ -1,12 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import useToken from "../../context/useToken";
 import "./UploadPicture.css";
-import getVideo, { takePhoto, paintToCanvas } from "../../services/getVideo";
-
-const acceptedTypes = ["image/png", "image/jpg", "image/jpeg"];
+import getVideo, {
+  takePhoto,
+  paintToCanvas,
+  stop,
+} from "../../services/getVideo";
+import { handleFileUpload, acceptedTypes } from "../../services/uploadPicture";
+import useToken from "../../context/useToken";
+import { useHistory } from "react-router";
 
 export default function UploadPicture() {
   const [file, setFile] = useState();
@@ -14,96 +17,53 @@ export default function UploadPicture() {
   const [imageURI, setImageURI] = useState();
   const [uploadStatus, setUploadStatus] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [response, setResponse] = useState({ data: "upload" });
   const videoRef = useRef(null);
   const photoRef = useRef(null);
   const stripRef = useRef(null);
-
+  const history = useHistory();
   const { token } = useToken();
-  const stop = (e) => {
-    const stream = videoRef.current.srcObject;
-    const tracks = stream.getTracks();
 
-    for (let i = 0; i < tracks.length; i++) {
-      let track = tracks[i];
-      track.stop();
-    }
+  if (!token) {
+    history.push("/login");
+  }
 
-    videoRef.current.srcObject = null;
-  };
   const handleTakePicture = async (e) => {
     e.preventDefault();
-
     const img = await takePhoto(photoRef, stripRef);
-    // const url = "data:image/png;base6....";
-    const res = await fetch(img);
-    const blob = await res.blob();
-    const newFile = new File([blob], "Test", { type: "image/png" });
-    console.log("File", newFile);
-    setFile(newFile);
-    stop(e);
+    setFile(img);
+    stop(videoRef);
   };
-  const getBase64 = (img, callback) => {
-    const reader = new FileReader();
-    reader.addEventListener("load", () => callback(reader.result));
-    reader.readAsDataURL(img);
-  };
+  console.log("Response", response);
 
-  const isValidFileType = (fileType) => {
-    return acceptedTypes.includes(fileType);
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
+    await handleFileUpload(
+      updateUploadProgress,
+      setImageURI,
+      setUploadStatus,
+      setUploading,
+      setResponse,
+      token,
+      file
+    );
   };
   useEffect(() => {
     getVideo(videoRef);
   }, [videoRef]);
 
-  const handleFileUpload = async (e) => {
-    e.preventDefault();
-    console.log("filetype", file);
-    if (!isValidFileType(file.type)) {
-      alert("Only images are allowed (png or jpg)");
-      return;
-    }
-
-    setUploading(true);
-    const formData = new FormData();
-    formData.append("image", file);
-    console.log("file", file);
-
-    await axios({
-      method: "post",
-      headers: {
-        authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",
-      },
-      data: formData,
-      url: "http://localhost:5000/images",
-      onUploadProgress: (ev) => {
-        const progress = (ev.loaded / ev.total) * 100;
-        updateUploadProgress(Math.round(progress));
-      },
-    })
-      .then((resp) => {
-        // our mocked response will always return true
-        // in practice, you would want to use the actual response object
-        console.log("response", resp);
-        setUploadStatus(true);
-        setUploading(false);
-        getBase64(file, (uri) => {
-          setImageURI(uri);
-        });
-      })
-      .catch((err) => console.error(err));
-  };
   return (
     <div className="upload-picture-container">
-      <div className="upload-picture-form">
-        <form onSubmit={handleFileUpload} className="form">
+      <div className={response ? "upload-picture-form" : "display-none"}>
+        <h2 className="title">Upload here your picture!</h2>
+        <form onSubmit={handleOnSubmit} className="form">
           <fieldset className="fieldset">
             <video
-              onCanPlay={() => paintToCanvas(videoRef, photoRef)}
               ref={videoRef}
+              className="video-display"
+              onCanPlay={() => paintToCanvas(videoRef, photoRef)}
             />
             <canvas ref={photoRef} style={{ display: "none" }} />
-            <button onClick={handleTakePicture}>Take a photo</button>
 
             <div>
               <div ref={stripRef} />
@@ -120,11 +80,11 @@ export default function UploadPicture() {
                 }
               }}
             />
-            {/* <button className="file-chooser-button" type="button">
-            {file ? "1 file selected" : "Choose File"}
-          </button> */}
             <button className="upload-button" type="submit">
               Upload
+            </button>
+            <button className="take-photo-button" onClick={handleTakePicture}>
+              Take a photo
             </button>
           </fieldset>
         </form>
@@ -141,6 +101,15 @@ export default function UploadPicture() {
           </div>
         ) : null}
       </div>
+      {/* <div
+        className={
+          response.data.message === "Image uploaded"
+            ? "success"
+            : "display-none"
+        }
+      >
+        {response.data.message}
+      </div> */}
       <div className="image-preview-box">
         {uploadStatus && imageURI ? (
           <img src={imageURI} alt="preview" className="preview-image" />
