@@ -38,6 +38,7 @@ export default function UploadPicture() {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
+
     await handleFileUpload(
       updateUploadProgress,
       setImageURI,
@@ -88,37 +89,35 @@ export default function UploadPicture() {
             </button>
           </fieldset>
         </form>
-        {uploading ? (
-          <div className="progress-bar-container">
-            <CircularProgressbar
-              value={uploadProgress}
-              text={`${uploadProgress}% uploaded`}
-              styles={buildStyles({
-                textSize: "10px",
-                pathColor: "teal",
-              })}
-            />
-          </div>
-        ) : null}
       </div>
-      {response && (
-        <div
-          className={
-            response.data.message === "Image uploaded"
-              ? "success"
-              : "display-none"
-          }
-        >
-          {response.data.message}
+      {uploading ? (
+        <div className="progress-bar-container">
+          <CircularProgressbar
+            value={uploadProgress}
+            text={`${uploadProgress}% uploaded`}
+            styles={buildStyles({
+              textSize: "10px",
+              pathColor: "teal",
+            })}
+          />
         </div>
-      )}
+      ) : null}
 
       <div className="image-preview-box">
+        {response && (
+          <div
+            className={
+              response.data.message === "Image uploaded"
+                ? "success"
+                : "display-none"
+            }
+          >
+            {response.data.message}
+          </div>
+        )}
         {uploadStatus && imageURI ? (
           <img src={imageURI} alt="preview" className="preview-image" />
-        ) : (
-          <span>A preview of your photo will appear here.</span>
-        )}
+        ) : null}
       </div>
     </div>
   );
