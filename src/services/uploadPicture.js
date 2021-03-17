@@ -1,5 +1,4 @@
 import axios from "axios";
-console.log("pROCESS", process.env);
 
 export const acceptedTypes = ["image/png", "image/jpg", "image/jpeg"];
 
