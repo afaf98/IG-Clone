@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 import getUser from "../services/login";
 import newUser from "../services/signup";
 
@@ -23,6 +23,7 @@ export function TokenProvider(props) {
     setToken(null);
     localStorage.removeItem("token");
   };
+
   return (
     <TokenContext.Provider value={{ token: token, auth: auth, logout: logout }}>
       {props.children}

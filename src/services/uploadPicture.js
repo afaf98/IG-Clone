@@ -1,4 +1,5 @@
 import axios from "axios";
+console.log("pROCESS", process.env);
 
 export const acceptedTypes = ["image/png", "image/jpg", "image/jpeg"];
 
@@ -37,7 +38,7 @@ export const handleFileUpload = async (
       "Content-Type": "multipart/form-data",
     },
     data: formData,
-    url: "https://i-clone-backend.herokuapp.com/images",
+    url: `${process.env.REACT_APP_DEV_SERVER}/images`,
     onUploadProgress: (ev) => {
       const progress = (ev.loaded / ev.total) * 100;
       updateUploadProgress(Math.round(progress));

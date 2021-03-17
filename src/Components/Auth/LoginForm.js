@@ -20,7 +20,7 @@ export default function LoginForm() {
     const { status, message } = await auth(data, "login");
     setFeedback({ status: status, message: message });
   };
-
+  console.log("process", process.env.NODE_ENV);
   if (token) {
     return <Redirect to="/home" />;
   }

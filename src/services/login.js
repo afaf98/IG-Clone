@@ -1,10 +1,11 @@
 import axios from "axios";
+require("dotenv").config();
 
 export default async function getUser(data) {
   try {
     console.log("do i get the data?", data);
     const response = await axios.post(
-      "https://i-clone-backend.herokuapp.com/login",
+      `${process.env.REACT_APP_DEV_SERVER}/login`,
       {
         ...data,
       }
