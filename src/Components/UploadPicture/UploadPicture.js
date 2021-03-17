@@ -17,7 +17,7 @@ export default function UploadPicture() {
   const [imageURI, setImageURI] = useState();
   const [uploadStatus, setUploadStatus] = useState(false);
   const [uploading, setUploading] = useState(false);
-  const [response, setResponse] = useState({ data: "upload" });
+  const [response, setResponse] = useState();
   const videoRef = useRef(null);
   const photoRef = useRef(null);
   const stripRef = useRef(null);
@@ -54,7 +54,7 @@ export default function UploadPicture() {
 
   return (
     <div className="upload-picture-container">
-      <div className={response ? "upload-picture-form" : "display-none"}>
+      <div className={!response ? "upload-picture-form" : "display-none"}>
         <h2 className="title">Upload here your picture!</h2>
         <form onSubmit={handleOnSubmit} className="form">
           <fieldset className="fieldset">
@@ -101,15 +101,18 @@ export default function UploadPicture() {
           </div>
         ) : null}
       </div>
-      {/* <div
-        className={
-          response.data.message === "Image uploaded"
-            ? "success"
-            : "display-none"
-        }
-      >
-        {response.data.message}
-      </div> */}
+      {response && (
+        <div
+          className={
+            response.data.message === "Image uploaded"
+              ? "success"
+              : "display-none"
+          }
+        >
+          {response.data.message}
+        </div>
+      )}
+
       <div className="image-preview-box">
         {uploadStatus && imageURI ? (
           <img src={imageURI} alt="preview" className="preview-image" />

@@ -37,7 +37,7 @@ export const handleFileUpload = async (
       "Content-Type": "multipart/form-data",
     },
     data: formData,
-    url: "http://localhost:5000/images",
+    url: "https://i-clone-backend.herokuapp.com/images",
     onUploadProgress: (ev) => {
       const progress = (ev.loaded / ev.total) * 100;
       updateUploadProgress(Math.round(progress));

@@ -3,9 +3,12 @@ import axios from "axios";
 export default async function newUser(data) {
   try {
     console.log("do i get the data?", data);
-    const response = await axios.post("http://localhost:5000/user", {
-      ...data,
-    });
+    const response = await axios.post(
+      "https://i-clone-backend.herokuapp.com/user",
+      {
+        ...data,
+      }
+    );
     console.log("Response", response);
     return {
       status: response.status,
