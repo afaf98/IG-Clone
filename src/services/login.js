@@ -1,16 +1,13 @@
 import axios from "axios";
-require("dotenv").config();
 
 export default async function getUser(data) {
   try {
-    console.log("do i get the data?", data);
     const response = await axios.post(
       `${process.env.REACT_APP_DEV_SERVER}/login`,
       {
         ...data,
       }
     );
-    console.log("Response", response);
     return {
       status: response.status,
       message: response.data.message,
