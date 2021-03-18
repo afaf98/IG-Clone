@@ -7,6 +7,7 @@ import SignupPage from "./Components/Auth/SignupPage";
 import HomeUser from "./Components/HomeUser/HomeUser";
 import { TokenProvider } from "./context/useToken";
 import UploadPicture from "./Components/UploadPicture/UploadPicture";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -15,11 +16,21 @@ function App() {
         <NavBar />
         <Footer />
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/signup" component={SignupPage} />
-          <Route path="/login" component={SignupPage} />
-          <Route path="/profile" component={HomeUser} />
-          <Route path="/upload" component={UploadPicture} />
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/signup">
+            <SignupPage />
+          </Route>
+          <Route path="/login">
+            <SignupPage />
+          </Route>
+          <PrivateRoute path="/profile">
+            <HomeUser />
+          </PrivateRoute>
+          <PrivateRoute path="/upload">
+            <UploadPicture />
+          </PrivateRoute>
         </Switch>
       </TokenProvider>
     </div>

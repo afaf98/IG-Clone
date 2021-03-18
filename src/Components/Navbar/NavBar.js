@@ -23,7 +23,7 @@ export default function NavBar() {
           item={token ? "Logout" : "Login"}
           path={token ? "/" : "/login"}
         />
-        ;
+        {token && <Navbaritems item="Upload" path="/upload" />}
       </div>
     </nav>
   );
