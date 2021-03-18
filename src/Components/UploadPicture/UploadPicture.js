@@ -9,7 +9,6 @@ import getVideo, {
 } from "../../services/getVideo";
 import { handleFileUpload, acceptedTypes } from "../../services/uploadPicture";
 import useToken from "../../context/useToken";
-import { useHistory } from "react-router";
 
 export default function UploadPicture() {
   const [file, setFile] = useState();
@@ -21,24 +20,7 @@ export default function UploadPicture() {
   const videoRef = useRef(null);
   const photoRef = useRef(null);
   const stripRef = useRef(null);
-  const history = useHistory();
-  const { token, checkToken, logout } = useToken();
-
-  useEffect(() => {
-    async function isValidToken() {
-      const response = await checkToken();
-      console.log("Heyy", response);
-      if (response.status !== 200) {
-        logout();
-        history.push("/login");
-      }
-    }
-    isValidToken();
-  }, []);
-
-  if (!token) {
-    history.push("/login");
-  }
+  const { token } = useToken();
 
   const handleTakePicture = async (e) => {
     e.preventDefault();
@@ -61,6 +43,7 @@ export default function UploadPicture() {
       file
     );
   };
+
   useEffect(() => {
     getVideo(videoRef);
   }, [videoRef]);
