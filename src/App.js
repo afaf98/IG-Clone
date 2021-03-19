@@ -8,6 +8,7 @@ import HomeUser from "./Components/HomeUser/HomeUser";
 import { TokenProvider } from "./context/useToken";
 import UploadPicture from "./Components/UploadPicture/UploadPicture";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import ProfilePage from "./Components/ProfilePage/ProfilePage";
 
 function App() {
   return (
@@ -25,11 +26,14 @@ function App() {
           <Route path="/login">
             <SignupPage />
           </Route>
-          <PrivateRoute path="/profile">
+          <PrivateRoute path="/home">
             <HomeUser />
           </PrivateRoute>
           <PrivateRoute path="/upload">
             <UploadPicture />
+          </PrivateRoute>
+          <PrivateRoute path="/profile">
+            <ProfilePage />
           </PrivateRoute>
         </Switch>
       </TokenProvider>

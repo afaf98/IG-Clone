@@ -24,6 +24,8 @@ export default function NavBar() {
           path={token ? "/" : "/login"}
         />
         {token && <Navbaritems item="Upload" path="/upload" />}
+
+        {token && <Navbaritems item="Profile" path="/profile" />}
       </div>
     </nav>
   );
