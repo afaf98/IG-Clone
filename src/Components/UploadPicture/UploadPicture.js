@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "./UploadPicture.css";
-import getVideo, {
-  takePhoto,
-  paintToCanvas,
-  stop,
-} from "../../services/getVideo";
+// import getVideo, {
+//   takePhoto,
+//   paintToCanvas,
+//   stop,
+// } from "../../services/getVideo";
 import { handleFileUpload, acceptedTypes } from "../../services/uploadPicture";
 import useToken from "../../context/useToken";
 
@@ -17,17 +17,17 @@ export default function UploadPicture() {
   const [uploadStatus, setUploadStatus] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [response, setResponse] = useState();
-  const videoRef = useRef(null);
-  const photoRef = useRef(null);
-  const stripRef = useRef(null);
+  // const videoRef = useRef(null);
+  // const photoRef = useRef(null);
+  // const stripRef = useRef(null);
   const { token } = useToken();
 
-  const handleTakePicture = async (e) => {
-    e.preventDefault();
-    const img = await takePhoto(photoRef, stripRef);
-    setFile(img);
-    stop(videoRef);
-  };
+  // const handleTakePicture = async (e) => {
+  //   e.preventDefault();
+  //   const img = await takePhoto(photoRef, stripRef);
+  //   setFile(img);
+  //   stop(videoRef);
+  // };
   console.log("Response", response);
 
   const handleOnSubmit = async (e) => {
@@ -44,36 +44,36 @@ export default function UploadPicture() {
     );
   };
 
-  useEffect(() => {
-    console.log("HEllo", videoRef);
-    if (navigator.mediaDevices) {
-      getVideo(videoRef);
-    }
+  // useEffect(() => {
+  //   console.log("HEllo", videoRef);
+  //   if (navigator.mediaDevices) {
+  //     getVideo(videoRef);
+  //   }
 
-    return () => {
-      // console.log("VideoRef", videoRef);
-      // navigator.mediaDevices
-      //   .getUserMedia({ video: { width: 300 } })
-      //   .then((stream) => {
-      //     // let video = videoRef.current;
-      //     // video.srcObject = stream;
-      //     // video.play();
-      //     console.log("Stream", stream);
-      //     const tracks = stream.getTracks();
-      //     console.log("Tracks", tracks);
-      //     for (let i = 0; i < tracks.length; i++) {
-      //       let track = tracks[i];
-      //       track.stop();
-      //     }
-      //   })
-      //   .catch((err) => {
-      //     console.error("error:", err);
-      //   });
-      // stop(videoRef);
-      // if (videoRef.current?.srcObject) {
-      // }
-    };
-  }, [videoRef]);
+  //   return () => {
+  //     // console.log("VideoRef", videoRef);
+  //     // navigator.mediaDevices
+  //     //   .getUserMedia({ video: { width: 300 } })
+  //     //   .then((stream) => {
+  //     //     // let video = videoRef.current;
+  //     //     // video.srcObject = stream;
+  //     //     // video.play();
+  //     //     console.log("Stream", stream);
+  //     //     const tracks = stream.getTracks();
+  //     //     console.log("Tracks", tracks);
+  //     //     for (let i = 0; i < tracks.length; i++) {
+  //     //       let track = tracks[i];
+  //     //       track.stop();
+  //     //     }
+  //     //   })
+  //     //   .catch((err) => {
+  //     //     console.error("error:", err);
+  //     //   });
+  //     // stop(videoRef);
+  //     // if (videoRef.current?.srcObject) {
+  //     // }
+  //   };
+  // }, [videoRef]);
 
   return (
     <div className="upload-picture-container">
@@ -88,7 +88,7 @@ export default function UploadPicture() {
               />
             )}
             <fieldset className="fieldset">
-              <video
+              {/*  <video
                 ref={videoRef}
                 className="video-display"
                 style={{ display: file ? "none" : "block" }}
@@ -98,7 +98,7 @@ export default function UploadPicture() {
 
               <div>
                 <div ref={stripRef} />
-              </div>
+              </div> */}
               <input
                 className="file-input"
                 type="file"
@@ -115,9 +115,9 @@ export default function UploadPicture() {
               <div className="choose-file">
                 <label for="file">{file ? file.name : "Choose File"}</label>
               </div>
-              <button className="take-photo-button" onClick={handleTakePicture}>
+              {/* <button className="take-photo-button" onClick={handleTakePicture}>
                 Take a photo
-              </button>
+              </button> */}
               <button className="upload-button" type="submit">
                 Upload
               </button>

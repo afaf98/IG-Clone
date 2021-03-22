@@ -19,13 +19,13 @@ export default function NavBar() {
       </div>
       <div className="topnav-links-container">
         <Navbaritems item="About Us" path="/aboutus" />
+        {token && <Navbaritems item="Upload" path="/upload" />}
+
+        {token && <Navbaritems item="Profile" path="/profile" />}
         <Navbaritems
           item={token ? "Logout" : "Login"}
           path={token ? "/" : "/login"}
         />
-        {token && <Navbaritems item="Upload" path="/upload" />}
-
-        {token && <Navbaritems item="Profile" path="/profile" />}
       </div>
     </nav>
   );

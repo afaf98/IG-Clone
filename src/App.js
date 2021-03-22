@@ -9,6 +9,8 @@ import { TokenProvider } from "./context/useToken";
 import UploadPicture from "./Components/UploadPicture/UploadPicture";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import ProfilePage from "./Components/ProfilePage/ProfilePage";
+import ChoosePage from "./Components/ChoosePage/ChoosePage";
+import TakePhoto from "./Components/TakePhoto/TakePhoto";
 
 function App() {
   return (
@@ -34,6 +36,12 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/profile">
             <ProfilePage />
+          </PrivateRoute>
+          <PrivateRoute path="/choose">
+            <ChoosePage />
+          </PrivateRoute>
+          <PrivateRoute path="/takephoto">
+            <TakePhoto />
           </PrivateRoute>
         </Switch>
       </TokenProvider>
