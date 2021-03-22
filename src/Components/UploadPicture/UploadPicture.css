@@ -33,17 +33,7 @@
   height: 50vh;
   margin-top: 200px;
 }
-.file-input {
-  background-color: #a9c9fa;
-  width: 31.5vw;
-  height: 26px;
-  border-radius: 3px;
-  padding-bottom: 5px;
-  font-size: 19px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: white;
-}
+
 .upload-button {
   width: 80px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -107,4 +97,36 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 13px;
+}
+.file-input + label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #397ee6;
+}
+.file-input:focus + label,
+.file-input + label:hover {
+  background-color: red;
+}
+.choose-file {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #397ee6;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 2px;
+  width: 120px;
+  border: 1px solid black;
+  border-radius: 3px;
+  border-width: thin;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }

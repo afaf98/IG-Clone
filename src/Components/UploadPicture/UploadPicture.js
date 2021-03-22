@@ -45,31 +45,91 @@ export default function UploadPicture() {
   };
 
   useEffect(() => {
-    getVideo(videoRef);
+    console.log("HEllo", videoRef);
+    if (navigator.mediaDevices) {
+      getVideo(videoRef);
+    }
+
+    return () => {
+      // console.log("VideoRef", videoRef);
+      // navigator.mediaDevices
+      //   .getUserMedia({ video: { width: 300 } })
+      //   .then((stream) => {
+      //     // let video = videoRef.current;
+      //     // video.srcObject = stream;
+      //     // video.play();
+      //     console.log("Stream", stream);
+      //     const tracks = stream.getTracks();
+      //     console.log("Tracks", tracks);
+      //     for (let i = 0; i < tracks.length; i++) {
+      //       let track = tracks[i];
+      //       track.stop();
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     console.error("error:", err);
+      //   });
+      // stop(videoRef);
+      // if (videoRef.current?.srcObject) {
+      // }
+    };
   }, [videoRef]);
 
   return (
     <div className="upload-picture-container">
       <div className={!response ? "upload-picture-form" : "display-none"}>
         <h2 className="title">Upload here your picture!</h2>
-        <form onSubmit={handleOnSubmit} className="form">
-          <fieldset className="fieldset">
-            <video
-              ref={videoRef}
-              className="video-display"
-              onCanPlay={() => paintToCanvas(videoRef, photoRef)}
-            />
-            <canvas ref={photoRef} style={{ display: "none" }} />
+        {navigator.mediaDevices && (
+          <form onSubmit={handleOnSubmit} className="form">
+            {file && (
+              <img
+                src={URL.createObjectURL(file)}
+                className="image-preview-box"
+              />
+            )}
+            <fieldset className="fieldset">
+              <video
+                ref={videoRef}
+                className="video-display"
+                style={{ display: file ? "none" : "block" }}
+                onCanPlay={() => paintToCanvas(videoRef, photoRef)}
+              />
+              <canvas ref={photoRef} style={{ display: "none" }} />
 
-            <div>
-              <div ref={stripRef} />
-            </div>
+              <div>
+                <div ref={stripRef} />
+              </div>
+              <input
+                className="file-input"
+                type="file"
+                name="file"
+                id="file"
+                // label={file ? "1 file selected" : "Choose File"}
+                accept={acceptedTypes.toString()}
+                onChange={(e) => {
+                  if (e.target.files && e.target.files.length > 0) {
+                    setFile(e.target.files[0]);
+                  }
+                }}
+              />
+              <div className="choose-file">
+                <label for="file">{file ? file.name : "Choose File"}</label>
+              </div>
+              <button className="take-photo-button" onClick={handleTakePicture}>
+                Take a photo
+              </button>
+              <button className="upload-button" type="submit">
+                Upload
+              </button>
+            </fieldset>
+          </form>
+        )}
+        {!navigator.mediaDevices && (
+          <form onSubmit={handleOnSubmit}>
             <input
-              className="file-input"
               type="file"
-              name="file"
-              label={file ? "1 file selected" : "Choose File"}
-              accept={acceptedTypes.toString()}
+              capture
+              accept="image/*"
               onChange={(e) => {
                 if (e.target.files && e.target.files.length > 0) {
                   setFile(e.target.files[0]);
@@ -79,11 +139,8 @@ export default function UploadPicture() {
             <button className="upload-button" type="submit">
               Upload
             </button>
-            <button className="take-photo-button" onClick={handleTakePicture}>
-              Take a photo
-            </button>
-          </fieldset>
-        </form>
+          </form>
+        )}
       </div>
       {uploading ? (
         <div className="progress-bar-container">
