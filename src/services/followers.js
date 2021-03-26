@@ -23,3 +23,15 @@ export async function getFollowers(token) {
   console.log("response followers", response.data);
   return response.data.followers;
 }
+
+export async function unfollow(token, idFollower) {
+  const response = await axios({
+    method: "delete",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+    url: `${process.env.REACT_APP_DEV_SERVER}/followers/${idFollower}`,
+  });
+  console.log("response followers", response.data);
+  return response.data.followers;
+}
