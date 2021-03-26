@@ -1,77 +1,54 @@
 .upload-picture-container {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* color: #216ddc */
   background-color: white;
 }
-.image-preview-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50vw;
-}
+
 .preview-image {
   width: 48vw;
   height: 78vh;
 }
+
 .upload-picture-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50vw;
-  height: 100vh;
-  margin-left: 0px;
-  /* border-right: 0.5px solid black; */
+  width: 50%;
+  height: 100%;
 }
 .form {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   height: 50vh;
   margin-top: 200px;
 }
 
 .upload-button {
-  width: 80px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 4rem;
   color: #397ee6;
-  background-color: white;
-  border-radius: 3px;
-  border-width: thin;
-  height: 30px;
+  background-color: transparent;
+  border: 0;
+  width: 40%;
+  height: 20%;
 }
-.fieldset {
-  border: 0px;
+
+.image-preview-box {
+  height: 100%;
+  width: 100%;
+  /* margin: 50px; */
 }
 .progress-bar-container {
   height: 200px;
   width: 200px;
   margin: 100px;
-  /* margin-top: -100px; */
 }
-.take-photo-button {
-  width: 120px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #397ee6;
-  background-color: rgb(255, 255, 255);
-  border-radius: 3px;
-  border-width: thin;
-  height: 30px;
-}
-.video-display {
-  margin-top: -50px;
-  margin-bottom: 25px;
-  width: 42vw;
-  height: 60vh;
-  border-radius: 4px;
-  background-color: transparent;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+
 .title {
   margin-top: 70px;
   margin-bottom: -70px;
@@ -79,9 +56,11 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #5a5858;
 }
+
 .display-none {
   display: none;
 }
+
 .success {
   color: rgb(215, 240, 180);
   background-color: rgb(140, 199, 51);
@@ -92,36 +71,18 @@
   text-align: center;
   border-radius: 4px;
 }
-.preview-text {
-  margin-top: -100px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 13px;
-}
+
 .file-input + label {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #397ee6;
 }
+
 .file-input:focus + label,
 .file-input + label:hover {
   background-color: red;
 }
-.choose-file {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #397ee6;
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-  padding: 2px;
-  width: 120px;
-  border: 1px solid black;
-  border-radius: 3px;
-  border-width: thin;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
+
 .file-input {
   width: 0.1px;
   height: 0.1px;
@@ -129,4 +90,38 @@
   overflow: hidden;
   position: absolute;
   z-index: -1;
+}
+
+.choose-file-icon {
+  background-color: transparent;
+  font-size: 4rem;
+  color: #397ee6;
+  background-color: transparent;
+  border: 0;
+  width: 40%;
+  height: 20%;
+  margin-bottom: -30px;
+  margin-right: 50px;
+}
+.choose-file-text {
+  font-size: 1.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #397ee6;
+  padding: 3px;
+  margin-right: -100px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  border: thin solid #397ee6;
+  background-color: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }

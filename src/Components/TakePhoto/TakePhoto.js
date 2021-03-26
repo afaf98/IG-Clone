@@ -1,62 +1,40 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import getVideo, {
   takePhoto,
   paintToCanvas,
   stop,
 } from "../../services/getVideo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
+import useNewPicture from "../../context/newPictureContext";
 
 import "./TakePhoto.css";
+import { useHistory } from "react-router";
 
 export default function TakePhoto() {
-  const [file, setFile] = useState();
-
+  const { file, setFile } = useNewPicture();
   const videoRef = useRef(null);
   const photoRef = useRef(null);
   const stripRef = useRef(null);
+  const history = useHistory();
 
   const handleTakePicture = async (e) => {
     e.preventDefault();
     const img = await takePhoto(photoRef, stripRef);
     setFile(img);
     stop(videoRef);
+    history.push("/upload");
   };
-  console.log("file", file);
   useEffect(() => {
-    console.log("HEllo", videoRef);
     if (navigator.mediaDevices) {
       getVideo(videoRef);
     }
-
-    return () => {
-      // console.log("VideoRef", videoRef);
-      // navigator.mediaDevices
-      //   .getUserMedia({ video: { width: 300 } })
-      //   .then((stream) => {
-      //     // let video = videoRef.current;
-      //     // video.srcObject = stream;
-      //     // video.play();
-      //     console.log("Stream", stream);
-      //     const tracks = stream.getTracks();
-      //     console.log("Tracks", tracks);
-      //     for (let i = 0; i < tracks.length; i++) {
-      //       let track = tracks[i];
-      //       track.stop();
-      //     }
-      //   })
-      //   .catch((err) => {
-      //     console.error("error:", err);
-      //   });
-      // stop(videoRef);
-      // if (videoRef.current?.srcObject) {
-      // }
-    };
   }, [videoRef]);
+
   return (
-    <div>
-      {file && (
-        <img src={URL.createObjectURL(file)} className="image-preview-box" />
-      )}
-      <fieldset className="fieldset">
+    <div className="take-photo-page">
+      <p className="title-smile"> Smile!</p>
+      <fieldset className={file ? "d-none" : "fieldset"}>
         <video
           ref={videoRef}
           className="video-display"
@@ -69,8 +47,9 @@ export default function TakePhoto() {
           <div ref={stripRef} />
         </div>
         <button className="take-photo-button" onClick={handleTakePicture}>
-          Take a photo
+          <FontAwesomeIcon size="100px" icon={faCircle} />
         </button>
+        <label for="button">Snap!</label>
       </fieldset>
     </div>
   );
