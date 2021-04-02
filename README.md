@@ -4,7 +4,7 @@ This app allows you to upload or take pictures and share it with all your follow
 
 ## [📸 Try the App here 🤳 ]()
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://vimeo.com/532246705)
+[Watch the video](https://vimeo.com/532246705)
 
 ### Table of contents
 
