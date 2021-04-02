@@ -4,7 +4,11 @@ This app allows you to upload or take pictures and share it with all your follow
 
 ## [📸 Try the App here 🤳 ]()
 
+<<<<<<< HEAD
 ![Preview](https://github.com/afaf98/IG-Clone/blob/main/imagesReadME/home.gif)
+=======
+[![Preview](https://github.com/afaf98/IG-Clone/blob/main/ImagesReadME/home.gif)]
+>>>>>>> 9f3cb603530ddb1017e5fa3670b2a7c94acc19db
 
 ### Table of contents
 
