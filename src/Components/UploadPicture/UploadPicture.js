@@ -1,52 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "./UploadPicture.css";
-import getVideo, {
-  takePhoto,
-  paintToCanvas,
-  stop,
-} from "../../services/getVideo";
 import { handleFileUpload, acceptedTypes } from "../../services/uploadPicture";
 import useToken from "../../context/useToken";
-import { useHistory } from "react-router";
+import useNewPicture from "../../context/newPictureContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFolderOpen, faUpload } from "@fortawesome/free-solid-svg-icons";
 
 export default function UploadPicture() {
-  const [file, setFile] = useState();
-  const [uploadProgress, updateUploadProgress] = useState(0);
-  const [imageURI, setImageURI] = useState();
-  const [uploadStatus, setUploadStatus] = useState(false);
-  const [uploading, setUploading] = useState(false);
-  const [response, setResponse] = useState();
-  const videoRef = useRef(null);
-  const photoRef = useRef(null);
-  const stripRef = useRef(null);
-  const history = useHistory();
-  const { token, checkToken, logout } = useToken();
-
-  useEffect(() => {
-    async function isValidToken() {
-      const response = await checkToken();
-      console.log("Heyy", response);
-      if (response.status !== 200) {
-        logout();
-        history.push("/login");
-      }
-    }
-    isValidToken();
-  }, []);
-
-  if (!token) {
-    history.push("/login");
-  }
-
-  const handleTakePicture = async (e) => {
-    e.preventDefault();
-    const img = await takePhoto(photoRef, stripRef);
-    setFile(img);
-    stop(videoRef);
-  };
-  console.log("Response", response);
+  const { token } = useToken();
+  const {
+    file,
+    setFile,
+    uploadProgress,
+    updateUploadProgress,
+    imageURI,
+    setImageURI,
+    uploadStatus,
+    setUploadStatus,
+    uploading,
+    setUploading,
+    response,
+    setResponse,
+  } = useNewPicture();
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
@@ -61,31 +38,25 @@ export default function UploadPicture() {
       file
     );
   };
-  useEffect(() => {
-    getVideo(videoRef);
-  }, [videoRef]);
 
   return (
     <div className="upload-picture-container">
       <div className={!response ? "upload-picture-form" : "display-none"}>
         <h2 className="title">Upload here your picture!</h2>
-        <form onSubmit={handleOnSubmit} className="form">
-          <fieldset className="fieldset">
-            <video
-              ref={videoRef}
-              className="video-display"
-              onCanPlay={() => paintToCanvas(videoRef, photoRef)}
-            />
-            <canvas ref={photoRef} style={{ display: "none" }} />
-
-            <div>
-              <div ref={stripRef} />
-            </div>
+        {navigator.mediaDevices && (
+          <form onSubmit={handleOnSubmit} className="form">
+            {file && (
+              <img
+                src={URL.createObjectURL(file)}
+                alt="preview"
+                className="image-preview-box"
+              />
+            )}
             <input
               className="file-input"
               type="file"
               name="file"
-              label={file ? "1 file selected" : "Choose File"}
+              id="file"
               accept={acceptedTypes.toString()}
               onChange={(e) => {
                 if (e.target.files && e.target.files.length > 0) {
@@ -93,14 +64,39 @@ export default function UploadPicture() {
                 }
               }}
             />
+            <div className="buttons">
+              <div className={file ? "choose-file-text" : "choose-file-icon"}>
+                <label for="file">
+                  {file ? (
+                    file.name
+                  ) : (
+                    <FontAwesomeIcon size="100px" icon={faFolderOpen} />
+                  )}
+                </label>
+              </div>
+              <button className="upload-button" type="submit">
+                <FontAwesomeIcon size="100px" icon={faUpload} />
+              </button>
+            </div>
+          </form>
+        )}
+        {!navigator.mediaDevices && (
+          <form onSubmit={handleOnSubmit}>
+            <input
+              type="file"
+              capture
+              accept="image/*"
+              onChange={(e) => {
+                if (e.target.files && e.target.files.length > 0) {
+                  setFile(e.target.files[0]);
+                }
+              }}
+            />
             <button className="upload-button" type="submit">
-              Upload
+              <FontAwesomeIcon size="100px" icon={faUpload} />
             </button>
-            <button className="take-photo-button" onClick={handleTakePicture}>
-              Take a photo
-            </button>
-          </fieldset>
-        </form>
+          </form>
+        )}
       </div>
       {uploading ? (
         <div className="progress-bar-container">
