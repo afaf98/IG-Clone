@@ -30,12 +30,12 @@ The Idea for The Photo Sharing App was to simulate the enviroment that a social 
 
 ##### - Sign up & Login page
 
-![Preview](https://github.com/afaf98/IG-Clone/blob/main/imagesReadME/signin.gif)
+![Signin](https://github.com/afaf98/IG-Clone/blob/main/imagesReadME/signin.gif)
 
 ##### - Upload & Take picture
 
-![Preview](https://github.com/afaf98/IG-Clone/blob/main/imagesReadME/takePhoto.gif)
+![Upload](https://github.com/afaf98/IG-Clone/blob/main/imagesReadME/takePhoto.gif)
 
 ##### - Profile page
 
-![Preview](https://github.com/afaf98/IG-Clone/blob/main/imagesReadME/profile.gif)
+![Profile](https://github.com/afaf98/IG-Clone/blob/main/ImagesReadME/profile.gif)
