@@ -69,3 +69,17 @@ I made this project to practice making a full stack app. You can check how the p
 - Data model
 
 ![dataModel](https://github.com/afaf98/IG-Clone/blob/main/dataModel.png)
+
+### Backend server repo
+
+The backend side of this project is an Express server using Sequelize. [Click here for more details](https://github.com/afaf98/Backend_IGClone)
+
+### Final thoughts
+
+**A final overview...:**
+
+- 👨🏽‍💻 I worked endless hours the past weeks to deliver this project at the current state. The idea was above and beyond my level of coding at the time i started, but hard work and lot of study delivered a piece of my overall idea which is very presentable and i am very proud of it!
+- 🌱 Uploading and taking pictures gave me a hard time at first but after working around it i realized how powerful is and great how to implement this feature.
+- 💬 Ask me about anything about the project, I am happy to chat with people or even collaborate.
+- 📫 How to reach me: [afaf.ibrahimi@gmail.com]();
+- 📝 That is my : [LinkedIn](https://www.linkedin.com/in/afaf-ibrahimi/)

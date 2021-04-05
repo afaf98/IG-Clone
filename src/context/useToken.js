@@ -1,4 +1,10 @@
-import { createContext, useState, useContext, useEffect } from "react";
+import {
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+  useCallback,
+} from "react";
 import getUser from "../services/login";
 import newUser from "../services/signup";
 import axios from "axios";
@@ -26,9 +32,9 @@ export function TokenProvider(props) {
     setToken(null);
     localStorage.removeItem("token");
   };
-  const checkToken = async () => {
+
+  const checkToken = useCallback(async () => {
     try {
-      console.log("hello hello ");
       const response = await axios({
         method: "get",
         headers: {
@@ -36,12 +42,11 @@ export function TokenProvider(props) {
         },
         url: `${process.env.REACT_APP_DEV_SERVER}/checktoken`,
       });
-      console.log("Axios", response);
       return response;
     } catch (error) {
       return error.response;
     }
-  };
+  }, [token]);
 
   useEffect(() => {
     async function isValidToken() {
@@ -54,7 +59,7 @@ export function TokenProvider(props) {
     if (token) {
       isValidToken();
     }
-  }, []);
+  }, [token, history, checkToken]);
 
   return (
     <TokenContext.Provider

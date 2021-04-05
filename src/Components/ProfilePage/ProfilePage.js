@@ -15,15 +15,14 @@ export default function ProfilePage() {
       console.log("Data", data);
       setImages(data.images);
       setUser(data.user);
+      setStatus(null);
     };
     responseImages();
   }, [token]);
-  console.log("Use", images);
   return (
     <div className="profile-page">
       <div className="profile-info">
-        {/* <p>Profile image</p> */}
-        <img src="https://via.placeholder.com/150" />
+        <img src="https://via.placeholder.com/150" alt="profile" />
         <p className="name-user">{!user ? status : user.name}</p>
         <p className="name-user">{!user ? status : user.lastName}</p>
         <div className="counters-followers-posts">
@@ -40,7 +39,7 @@ export default function ProfilePage() {
           : images.map((image) => {
               return (
                 <div className="image-card ">
-                  <img src={image.url} className="image" />
+                  <img src={image.url} className="image" alt={image.id} />
                   <label className="label-description">Description :</label>
                   <p>{image.name}</p>
                 </div>

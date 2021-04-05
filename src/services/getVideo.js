@@ -26,9 +26,8 @@ export const paintToCanvas = (videoRef, photoRef) => {
   }, 200);
 };
 
-export const takePhoto = async (photoRef, stripRef) => {
+export const takePhoto = async (photoRef) => {
   let photo = photoRef.current;
-  let strip = stripRef.current;
   const data = photo.toDataURL("image/jpg");
   const res = await fetch(data);
   const blob = await res.blob();

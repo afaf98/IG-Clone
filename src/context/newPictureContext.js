@@ -1,10 +1,4 @@
-// Manage a file state
-// It should pass too any component, setFile,file
-// Upload
-
-import { createContext, useState, useContext, useEffect } from "react";
-import axios from "axios";
-import { useHistory } from "react-router";
+import { createContext, useState, useContext } from "react";
 
 const NewPictureContext = createContext({});
 
@@ -15,8 +9,6 @@ export function NewPictureProvider(props) {
   const [uploadStatus, setUploadStatus] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [response, setResponse] = useState();
-
-  const history = useHistory();
 
   return (
     <NewPictureContext.Provider
