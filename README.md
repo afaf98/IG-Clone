@@ -64,8 +64,8 @@ I made this project to practice making a full stack app. You can check how the p
 
 - Upload page
 
-![uploadPage](https://whimsical.com/snapshots-TfLEox8xzV77cdG8nTBy2K)
+[uploadPage](https://whimsical.com/snapshots-TfLEox8xzV77cdG8nTBy2K)
 
 - Data model
 
-![dataModel](https://whimsical.com/followers-6HK9tYMG3TayT3qypBe6tD)
+![dataModel](https://github.com/afaf98/IG-Clone/blob/main/dataModel.png)
