@@ -28,10 +28,10 @@ export function TokenProvider(props) {
       return { status: "Success", message: response.message };
     }
   };
-  const logout = () => {
+  const logout = useCallback(() => {
     setToken(null);
     localStorage.removeItem("token");
-  };
+  }, []);
 
   const checkToken = useCallback(async () => {
     try {
@@ -59,7 +59,7 @@ export function TokenProvider(props) {
     if (token) {
       isValidToken();
     }
-  }, [token, history, checkToken]);
+  }, [token, history, checkToken, logout]);
 
   return (
     <TokenContext.Provider
