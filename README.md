@@ -60,12 +60,12 @@ I made this project to practice making a full stack app. You can check how the p
 
 - Cards home page
 
-[wireFrame](https://github.com/afaf98/IG-Clone/blob/main/Card_Layouts.png)
+![wireFrame](https://github.com/afaf98/IG-Clone/blob/main/Card_Layouts.png)
 
 - Upload page
 
-[uploadPage](https://whimsical.com/snapshots-TfLEox8xzV77cdG8nTBy2K)
+![uploadPage](https://whimsical.com/snapshots-TfLEox8xzV77cdG8nTBy2K)
 
 - Data model
 
-[dataModel](https://whimsical.com/followers-6HK9tYMG3TayT3qypBe6tD)
+![dataModel](https://whimsical.com/followers-6HK9tYMG3TayT3qypBe6tD)
