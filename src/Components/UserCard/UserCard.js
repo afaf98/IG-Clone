@@ -12,10 +12,16 @@ export default function UserCard({
 }) {
   const history = useHistory();
   const { token } = useToken();
+  console.log("usercard", user);
 
   return (
     <div className="user-card">
-      <FontAwesomeIcon icon={faAddressCard} />
+      {user.latestImage.length === 0 ? (
+        <FontAwesomeIcon icon={faAddressCard} />
+      ) : (
+        <img className="profileImage" src={user.latestImage} alt="profile" />
+      )}
+
       <div className="user-info">
         <p className="user-text">{user.firstName}</p>
         <p className="user-text">{user.lastName}</p>
