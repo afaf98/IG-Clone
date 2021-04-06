@@ -19,12 +19,13 @@ export default function ProfilePage() {
     };
     responseImages();
   }, [token]);
+  console.log("user", user);
   return (
     <div className="profile-page">
       <div className="profile-info">
         <img src="https://via.placeholder.com/150" alt="profile" />
-        <p className="name-user">{!user ? status : user.name}</p>
-        <p className="name-user">{!user ? status : user.lastName}</p>
+        <p className="name-user">{user && user.name}</p>
+        <p className="name-user">{user && user.lastName}</p>
         <div className="counters-followers-posts">
           <div className="c-posts">Posts</div>
           <div className="c-followers">Followers</div>
