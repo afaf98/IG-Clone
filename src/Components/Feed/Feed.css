@@ -1,0 +1,24 @@
+.feed-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-card {
+  margin-top: 20px;
+  padding: 50px;
+  background-color: #88b4f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 9px 9px 5px lightgray;
+  width: 30vw;
+  height: 50vh;
+}
+
+.post-image {
+  height: 97%;
+  width: 100%;
+}
