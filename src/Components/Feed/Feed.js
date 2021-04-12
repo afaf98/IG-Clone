@@ -6,14 +6,14 @@ import "./Feed.css";
 export default function Feed(props) {
   const { token } = useToken();
   const [posts, setPosts] = useState(null);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(null);
   async function feed() {
     const response = await getFeed(token);
     // console.log("rs", response);
     setPosts(response.images);
     setUsers(response.users);
   }
-  // console.log("images & users", posts, users);
+  console.log("users", users && users[0].id);
 
   useEffect(() => {
     feed();
@@ -21,10 +21,12 @@ export default function Feed(props) {
   return (
     <div className="feed-page">
       {posts &&
-        users &&
-        posts.map((post) => {
+        posts.map((post, index) => {
           return (
             <div className="post-card">
+              <div className="user-name">
+                {post.userFirstName} {post.userLastName}
+              </div>
               <img src={post.url} className="post-image" />
             </div>
           );
