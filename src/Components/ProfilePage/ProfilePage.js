@@ -15,7 +15,6 @@ export default function ProfilePage() {
   useEffect(() => {
     const responseImages = async () => {
       const data = await getProfilePictures(token);
-      console.log("Data", data);
       setImages(data.images);
       setUser(data.user);
       setProfileImage(data.profileImage);

@@ -12,7 +12,6 @@ export default function UserCard({
 }) {
   const history = useHistory();
   const { token } = useToken();
-  console.log("usercard", user);
 
   return (
     <div className="user-card">
