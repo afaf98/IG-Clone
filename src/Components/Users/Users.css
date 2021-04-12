@@ -50,6 +50,8 @@
 
 .profile-Image {
   height: 65%;
+  width: 30%;
+  object-fit: scale-down;
   border-radius: 30px;
   box-shadow: 6px 6px 5px #9fbeec;
 }

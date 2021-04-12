@@ -5,6 +5,7 @@
   flex-direction: column;
   width: 100vw;
   height: 80vh;
+  border: 0;
 }
 
 .d-none {
