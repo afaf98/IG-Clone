@@ -21,7 +21,6 @@ function App() {
       <TokenProvider>
         <NewPictureProvider>
           <NavBar />
-          <Footer />
           <Switch>
             <Route exact path="/">
               <Homepage />
@@ -51,6 +50,7 @@ function App() {
               <TakePhoto />
             </PrivateRoute>
           </Switch>
+          <Footer />
         </NewPictureProvider>
       </TokenProvider>
     </div>

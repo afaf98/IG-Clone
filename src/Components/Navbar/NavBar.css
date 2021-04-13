@@ -1,17 +1,12 @@
-/* Reset */
-body {
-  margin: 0;
-}
-
-/* Add a black background color to the top navigation */
 .topnav {
   background-color: #69a1f3;
   overflow: hidden;
   display: flex;
   position: fixed;
   top: 0px;
-  height: 8vh;
-  z-index: 1;
+  height: 5vh;
+  width: 100%;
+  left: 0;
 }
 
 .topnav-logo-container {
@@ -21,14 +16,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* filter: drop-shadow(0 0 2rem white); */
 }
-
-/* .topnav-logo {
-  height: 90%;
-  width: 60%;
-  display: flex;
-} */
 
 .topnav-links-container {
   width: 90vw;
