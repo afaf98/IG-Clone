@@ -38,10 +38,10 @@ export default function LoginForm() {
           )}
         </p>
       )}
-      Email :{" "}
+      <div className="name-input"> Email :</div>
       <input type="email" name="email" className="input-field" ref={register} />
       <p>{errors.email?.message}</p>
-      Password :{" "}
+      <div className="name-input"> Password :</div>
       <input
         type="password"
         name="password"

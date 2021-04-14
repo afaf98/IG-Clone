@@ -18,6 +18,7 @@ export default function SignUpForm() {
     resolver: yupResolver(schema),
   });
   const { token, auth } = useToken();
+
   const onSubmit = async (data) => {
     const { status, message } = await auth(data, "signUp");
     setFeedback({ status: status, message: message });
@@ -26,19 +27,16 @@ export default function SignUpForm() {
   if (token) {
     return <Redirect to="/home" />;
   }
+
   return (
     <form
       className="form-container text-format"
       id="signup-form"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <h2>Signup here!</h2>
-      {feedback.status && (
-        <p className={feedback.status === "Success" ? "success" : "error"}>
-          {feedback.message}
-        </p>
-      )}
-      First name:{" "}
+      <h2>Sign up here!</h2>
+      {feedback.status && <p className="error">{feedback.message}</p>}
+      <div className="name-input"> First name :</div>
       <input
         type="text"
         className="input-field"
@@ -46,7 +44,7 @@ export default function SignUpForm() {
         ref={register}
       />
       <p id="firstNameError">{errors.firstName?.message}</p>
-      Last name:{" "}
+      <div className="name-input"> Last name :</div>
       <input
         type="text"
         className="input-field"
@@ -54,10 +52,10 @@ export default function SignUpForm() {
         ref={register}
       />
       <p>{errors.lastName?.message}</p>
-      Email :{" "}
+      <div className="name-input"> Email :</div>
       <input type="email" className="input-field" name="email" ref={register} />
       <p>{errors.email?.message}</p>
-      Password :{" "}
+      <div className="name-input"> Password :</div>
       <input
         type="password"
         className="input-field"
