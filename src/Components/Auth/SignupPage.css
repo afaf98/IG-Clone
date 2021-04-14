@@ -4,20 +4,23 @@
   justify-content: flex-start;
   align-items: center;
 }
-
+body {
+  height: 100vh;
+  width: 100%;
+}
 .form-container {
-  width: 50vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(236, 233, 233);
-  border-right: lightskyblue 0.5px solid;
+  border-right: white 0.5px solid;
 }
+
 .text-format {
   font-weight: 500;
-  color: rgb(90, 88, 88);
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 20px;
@@ -26,9 +29,11 @@
 .input-field {
   width: 30%;
   height: 30px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  margin: 5px;
+  border-radius: 4px;
+  border: 0.5px solid white;
   color: rgb(90, 88, 88);
+  box-shadow: 2.5px 2.5px 5px #9fbeec;
   padding-left: 10px;
   border-width: 0.5px;
 }
@@ -40,7 +45,10 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 20px;
-  border-radius: 6px;
+  border-radius: 4px;
+  border: 0.5px;
+  color: white;
+  box-shadow: 2px 2px 5px #9fbeec;
 }
 
 .error {
@@ -63,4 +71,22 @@
   height: 22px;
   text-align: center;
   border-radius: 4px;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-container {
+    height: 80vh;
+    flex-direction: column;
+    margin: -95px;
+  }
+  .signupPage {
+    flex-direction: column;
+  }
+  body {
+    height: 130vh;
+  }
+  .input-field {
+    width: 60%;
+    height: 25px;
+  }
 }

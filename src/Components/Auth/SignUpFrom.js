@@ -18,7 +18,6 @@ export default function SignUpForm() {
     resolver: yupResolver(schema),
   });
   const { token, auth } = useToken();
-  console.log("token", token);
   const onSubmit = async (data) => {
     const { status, message } = await auth(data, "signUp");
     setFeedback({ status: status, message: message });
@@ -27,19 +26,6 @@ export default function SignUpForm() {
   if (token) {
     return <Redirect to="/home" />;
   }
-  // const [feedback, setFeedback] = useState({ status: null, message: "" });
-  // const { register, handleSubmit, errors } = useForm({
-  //   resolver: yupResolver(schema),
-  // });
-  // const onSubmit = async (data) => {
-  //   const response = await newUser(data);
-  //   console.log("Response signup", response);
-  //   if (response.error) {
-  //     setFeedback({ status: "Error", message: response.error });
-  //   } else {
-  //     setFeedback({ status: "Success", message: response.message });
-  //   }
-  // };
   return (
     <form
       className="form-container text-format"

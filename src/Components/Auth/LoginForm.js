@@ -14,13 +14,11 @@ export default function LoginForm() {
     resolver: yupResolver(schema),
   });
   const { token, auth } = useToken();
-  console.log("token", token);
   const onSubmit = async (data) => {
     console.log(data);
     const { status, message } = await auth(data, "login");
     setFeedback({ status: status, message: message });
   };
-  console.log("process", process.env.NODE_ENV);
   if (token) {
     return <Redirect to="/home" />;
   }
