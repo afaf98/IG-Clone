@@ -83,7 +83,6 @@ h2 {
   .form-container {
     height: 80vh;
     flex-direction: column;
-    /* margin: -5px; */
   }
   .signupPage {
     flex-direction: column;
@@ -100,17 +99,16 @@ h2 {
   .form-container {
     height: 80vh;
     flex-direction: column;
-    /* margin: -75px; */
   }
   .signupPage {
     flex-direction: column;
   }
   body {
-    height: 130vh;
+    height: 170vh;
   }
   .input-field {
     width: 60%;
-    height: 25px;
+    height: 30px;
   }
 }
 @media only screen and (max-width: 500px) {

@@ -4,7 +4,7 @@
   display: flex;
   position: fixed;
   top: 0px;
-  height: 5vh;
+  height: 6vh;
   width: 100%;
   left: 0;
 }
@@ -13,6 +13,7 @@
   color: white;
   height: 100%;
   width: 10vw;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,45 +25,84 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  border-bottom: 1.5px solid #216ddc;
+  border-bottom: 1.5px solid rgb(157, 226, 235);
 }
 
 .topnav-links-container :hover {
   background-color: white;
-  text-decoration: wavy;
   color: #216ddc;
 }
 
 .topnav-links {
-  font-size: 17px;
+  font-size: 19px;
   color: white;
-  font-weight: 600;
-  text-decoration: none;
+  font-style: italic;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  padding: 5px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  padding: 7px;
   background-color: transparent;
   border: 0px;
+  border-radius: 3px;
   margin-left: 3rem;
   margin-right: 3rem;
-  filter: drop-shadow(0 0 0.75rem white);
 }
 
 .topnav-button {
-  font-size: 17px;
+  font-size: 20px;
   color: white;
-  font-weight: 600;
-  text-decoration: none;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  padding: 5px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  background-color: rgb(253, 101, 101);
-  border: 0px;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  padding: 7px;
+  font-style: italic;
+  background-color: rgb(241, 105, 105);
+  border: 0.5px;
+  border-radius: 3px;
+  margin-right: 2rem;
   filter: drop-shadow(0 0 0.75rem #216ddc);
+}
+@media only screen and (max-width: 800px) {
+  .topnav-links {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .topnav-button {
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  .topnav-logo-container {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .topnav-links {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .topnav-button {
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  .topnav-logo-container {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .topnav-links {
+    font-size: 13px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  .topnav-button {
+    margin-right: 8px;
+    font-size: 13px;
+  }
+  .topnav-logo-container {
+    font-size: 13px;
+    margin-left: 3px;
+  }
+  .topnav-links-container {
+    border-bottom: 0;
+  }
 }
