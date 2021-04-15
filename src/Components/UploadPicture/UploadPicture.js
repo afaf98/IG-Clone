@@ -49,9 +49,22 @@ export default function UploadPicture() {
               <img
                 src={URL.createObjectURL(file)}
                 alt="preview"
-                className="image-preview-box"
+                className={uploading ? "display-none" : "image-preview-box"}
               />
             )}
+            {uploading ? (
+              <div className="progress-bar-container">
+                <CircularProgressbar
+                  value={uploadProgress}
+                  text={`${uploadProgress}% uploaded`}
+                  styles={buildStyles({
+                    textSize: "10px",
+                    pathColor: "white",
+                    textColor: "white",
+                  })}
+                />
+              </div>
+            ) : null}
             <input
               className="file-input"
               type="file"
@@ -98,18 +111,19 @@ export default function UploadPicture() {
           </form>
         )}
       </div>
-      {uploading ? (
+      {/* {uploading ? (
         <div className="progress-bar-container">
           <CircularProgressbar
             value={uploadProgress}
             text={`${uploadProgress}% uploaded`}
             styles={buildStyles({
               textSize: "10px",
-              pathColor: "teal",
+              pathColor: "white",
+              textColor: "white",
             })}
           />
         </div>
-      ) : null}
+      ) : null} */}
 
       <div>
         {response && (
