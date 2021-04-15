@@ -2,6 +2,7 @@ import React from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import "./UploadPicture.css";
+import { Redirect } from "react-router-dom";
 import { handleFileUpload, acceptedTypes } from "../../services/uploadPicture";
 import useToken from "../../context/useToken";
 import useNewPicture from "../../context/newPictureContext";
@@ -24,7 +25,6 @@ export default function UploadPicture() {
     response,
     setResponse,
   } = useNewPicture();
-
   const handleOnSubmit = async (e) => {
     e.preventDefault();
 
@@ -42,7 +42,7 @@ export default function UploadPicture() {
   return (
     <div className="upload-picture-container">
       <div className={!response ? "upload-picture-form" : "display-none"}>
-        <h2 className="title">Upload here your picture!</h2>
+        <h2 className="title-upload">Upload here your picture!</h2>
         {navigator.mediaDevices && (
           <form onSubmit={handleOnSubmit} className="form">
             {file && (
@@ -111,7 +111,7 @@ export default function UploadPicture() {
         </div>
       ) : null}
 
-      <div className="image-preview-box">
+      <div>
         {response && (
           <div
             className={
@@ -120,12 +120,13 @@ export default function UploadPicture() {
                 : "display-none"
             }
           >
-            {response.data.message}
+            {response.data.message === "Image uploaded" ? (
+              <Redirect to="/home" />
+            ) : (
+              "Oops! Something went wrong!"
+            )}
           </div>
         )}
-        {uploadStatus && imageURI ? (
-          <img src={imageURI} alt="preview" className="preview-image" />
-        ) : null}
       </div>
     </div>
   );
