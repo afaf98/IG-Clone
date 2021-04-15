@@ -37,17 +37,6 @@ body {
   position: relative;
 }
 
-.take-photo-button + label {
-  text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 50px;
-  font-weight: 600;
-  color: #69a1f3;
-  margin-top: 505px;
-  position: absolute;
-}
-
 .title-smile {
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -66,16 +55,7 @@ body {
   border-radius: 5px;
 }
 
-@media only screen and (max-width: 1400px) {
-  .take-photo-button + label {
-    margin-top: 450px;
-  }
-}
 @media only screen and (max-width: 1030px) {
-  .take-photo-button + label {
-    margin-top: 750px;
-    font-size: 70px;
-  }
   .take-photo-button {
     font-size: 150px;
   }
@@ -84,28 +64,22 @@ body {
   }
 }
 @media only screen and (max-width: 900px) {
-  .take-photo-button + label {
-    margin-top: 410px;
-  }
   .title-smile {
     font-size: 50px;
   }
 }
 @media only screen and (max-width: 780px) {
-  .take-photo-button + label {
-    margin-top: 560px;
-  }
   .title-smile {
     font-size: 50px;
   }
   .video-display {
     width: 90vw;
   }
+  .take-photo-button {
+    font-size: 70px;
+  }
 }
 @media only screen and (max-width: 630px) {
-  .take-photo-button + label {
-    margin-top: 405px;
-  }
   .title-smile {
     font-size: 40px;
   }
@@ -114,9 +88,6 @@ body {
   }
 }
 @media only screen and (max-width: 505px) {
-  .take-photo-button + label {
-    margin-top: 420px;
-  }
   .title-smile {
     font-size: 40px;
   }
@@ -124,28 +95,25 @@ body {
     width: 90vw;
   }
 }
-@media only screen and (max-width: 400px) {
-  .take-photo-button + label {
-    margin-top: 370px;
-  }
+@media only screen and (max-width: 450px) {
   .title-smile {
-    font-size: 40px;
-  }
-  .video-display {
-    width: 90vw;
-    height: 50vh;
-  }
-}
-@media only screen and (max-width: 360px) {
-  .take-photo-button + label {
-    margin-top: 300px;
     font-size: 40px;
   }
   .take-photo-button {
     font-size: 70px;
   }
+  .video-display {
+    margin-top: -40px;
+    width: 90vw;
+    height: 50vh;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .take-photo-button {
+    font-size: 60px;
+  }
   .title-smile {
-    font-size: 30px;
+    font-size: 20px;
   }
   .video-display {
     width: 80vw;
@@ -154,9 +122,6 @@ body {
 }
 
 @media only screen and (max-width: 410px) {
-  .take-photo-button + label {
-    margin-top: 300px;
-  }
   .title-smile {
     font-size: 40px;
   }
@@ -167,9 +132,6 @@ body {
 }
 
 @media only screen and (max-width: 420px) {
-  .take-photo-button + label {
-    margin-top: 360px;
-  }
   .title-smile {
     font-size: 40px;
   }
@@ -179,9 +141,6 @@ body {
   }
 }
 @media only screen and (max-width: 320px) {
-  .take-photo-button + label {
-    margin-top: 280px;
-  }
   .title-smile {
     font-size: 40px;
   }
@@ -191,9 +150,6 @@ body {
   }
 }
 @media only screen and (max-width: 375px) {
-  .take-photo-button + label {
-    margin-top: 390px;
-  }
   .title-smile {
     font-size: 40px;
   }

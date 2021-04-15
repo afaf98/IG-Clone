@@ -5,7 +5,7 @@ import getVideo, {
   stop,
 } from "../../services/getVideo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCamera, faCircle } from "@fortawesome/free-solid-svg-icons";
 import useNewPicture from "../../context/newPictureContext";
 
 import "./TakePhoto.css";
@@ -47,9 +47,8 @@ export default function TakePhoto() {
           <div ref={stripRef} />
         </div>
         <button className="take-photo-button" onClick={handleTakePicture}>
-          <FontAwesomeIcon size="100px" icon={faCircle} />
+          <FontAwesomeIcon size="100px" icon={faCamera} />
         </button>
-        <label for="button">📷</label>
       </fieldset>
     </div>
   );
