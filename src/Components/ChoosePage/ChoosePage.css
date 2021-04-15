@@ -98,6 +98,9 @@
   .f-column {
     margin: 40px;
   }
+  .button + label {
+    text-align: center;
+  }
 }
 @media only screen and (max-width: 450px) {
   .title {
@@ -108,13 +111,63 @@
   }
   .button {
     font-size: 50px;
-    margin: 100px;
+    margin: 10px;
   }
   .button-field {
-    width: 70%;
-    margin: 100px;
+    width: 40%;
+    margin: 50px;
+  }
+  .button + label {
+    text-align: center;
   }
   .f-column {
-    margin: 90px;
+    margin: 20px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .title {
+    font-size: 25px;
+  }
+  .under-title {
+    font-size: 15px;
+  }
+  .button {
+    font-size: 40px;
+    margin: 10px;
+  }
+  .button-field {
+    width: 40%;
+    margin: 50px;
+  }
+  .button + label {
+    text-align: center;
+  }
+  .f-column {
+    margin: 20px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .title {
+    font-size: 25px;
+  }
+  body {
+    height: 100vh;
+  }
+  .under-title {
+    font-size: 15px;
+  }
+  .button {
+    font-size: 45px;
+    margin: 10px;
+  }
+  .button-field {
+    width: 40%;
+    margin: 50px;
+  }
+  .button + label {
+    text-align: center;
+  }
+  .f-column {
+    margin: 20px;
   }
 }
