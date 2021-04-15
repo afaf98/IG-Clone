@@ -49,7 +49,7 @@ export default function TakePhoto() {
         <button className="take-photo-button" onClick={handleTakePicture}>
           <FontAwesomeIcon size="100px" icon={faCircle} />
         </button>
-        <label for="button">Snap!</label>
+        <label for="button">📷</label>
       </fieldset>
     </div>
   );
