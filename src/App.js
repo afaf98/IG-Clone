@@ -1,5 +1,4 @@
 import "./App.css";
-import Footer from "./Components/Footer/Footer";
 import Homepage from "./Components/Homepage";
 import NavBar from "./Components/Navbar/NavBar";
 import { Switch, Route } from "react-router-dom";
@@ -50,7 +49,6 @@ function App() {
               <TakePhoto />
             </PrivateRoute>
           </Switch>
-          <Footer />
         </NewPictureProvider>
       </TokenProvider>
     </div>

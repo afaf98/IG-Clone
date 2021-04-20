@@ -23,7 +23,8 @@
   height: 230px;
   border-radius: 5px;
   background-color: #88b4f6;
-  box-shadow: 8px 8px 10px #c8f6f6;
+  box-shadow: 0 7px 8px -4px rgb(0 0 0 / 20%), 0 12px 17px 2px rgb(0 0 0 / 14%),
+    0 5px 22px 4px rgb(0 0 0 / 12%);
 }
 
 .image {
@@ -67,13 +68,15 @@
   height: 120px;
   object-fit: cover;
   border-radius: 30px;
-  box-shadow: 8px 8px 10px #c8f6f6;
+  box-shadow: 0 7px 8px -4px rgb(0 0 0 / 20%), 0 12px 17px 2px rgb(0 0 0 / 14%),
+    0 5px 22px 4px rgb(0 0 0 / 12%);
   margin: 5px;
 }
 .noProfileImage {
   width: 50%;
   height: 30%;
-  box-shadow: 8px 8px 10px #c8f6f6;
+  box-shadow: 0 7px 8px -4px rgb(0 0 0 / 20%), 0 12px 17px 2px rgb(0 0 0 / 14%),
+    0 5px 22px 4px rgb(0 0 0 / 12%);
   border-radius: 30px;
 }
 .profileButton {

@@ -3,7 +3,10 @@
   overflow: hidden;
   display: flex;
   position: fixed;
-  z-index: 2;
+  /* z-index: 2; */
+  box-shadow: 0 7px 8px -4px rgb(0 0 0 / 20%), 0 12px 17px 2px rgb(0 0 0 / 14%),
+    0 5px 22px 4px rgb(0 0 0 / 12%);
+  z-index: 1030;
   top: 0px;
   height: 6vh;
   width: 100%;
