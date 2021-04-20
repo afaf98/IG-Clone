@@ -3,6 +3,7 @@ import getProfilePictures from "../../services/getProfilePictures";
 import useToken from "../../context/useToken";
 import "./ProfilePage.css";
 import { useHistory } from "react-router";
+import moment from "moment";
 
 export default function ProfilePage() {
   const { token } = useToken();
@@ -30,6 +31,10 @@ export default function ProfilePage() {
   return (
     <div className="profile-page">
       <div className="profile-info">
+        <div className="counters-followers-posts">
+          <p className="name-user">{user && user.name}</p>
+          <p className="name-user">{user && user.lastName}</p>
+        </div>
         <button onClick={uploadPicture} className="profileButton">
           <img
             src={
@@ -43,23 +48,23 @@ export default function ProfilePage() {
           <br />
           Edit your profile picture
         </button>
-        <p className="name-user">{user && user.name}</p>
-        <p className="name-user">{user && user.lastName}</p>
-        <div className="counters-followers-posts">
-          <div className="buttons">
-            <button>Follow</button>
-          </div>
-        </div>
       </div>
       <div className="image-container">
         {!images
           ? status
           : images.map((image) => {
+              // console.log("image", image);
               return (
-                <div className="image-card ">
-                  <img src={image.url} className="image" alt={image.id} />
-                  <label className="label-description">Description :</label>
-                  <p>{image.name}</p>
+                <div className="image-card " key={image.id}>
+                  <img
+                    src={image.url}
+                    className="image"
+                    alt={`post-${image.id}`}
+                    key={image.id}
+                  />
+                  <label className="label-description">
+                    {moment(image.createdAt).startOf().fromNow(true)} ago
+                  </label>
                 </div>
               );
             })}
