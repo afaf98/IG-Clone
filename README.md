@@ -2,9 +2,9 @@
 
 This app allows you to upload or take pictures and share it with all your followers.
 
-## [📸 Try the App here 🤳 ]()
+## [📸 Try the App here 🤳 ](https://photosharing.netlify.app)
 
-![Preview](https://github.com/afaf98/IG-Clone/blob/main/ImagesReadME/home.gif)
+![Preview](https://github.com/afaf98/IG-Clone/blob/homeProfile/ImagesReadME/homeview.gif)
 
 ### Table of contents
 
@@ -34,17 +34,25 @@ I made this project to practice making a full stack app. You can check how the p
 
 ### Overview
 
+### - Home page
+
+![Home](https://github.com/afaf98/IG-Clone/blob/homeProfile/ImagesReadME/home.gif)
+
 ##### - Sign up & Login page
 
-![Sign in](https://github.com/afaf98/IG-Clone/blob/main/ImagesReadME/signin.gif)
+![Sign in](https://github.com/afaf98/IG-Clone/blob/homeProfile/ImagesReadME/login.gif)
 
 ##### - Upload & Take picture
 
-![Upload](https://github.com/afaf98/IG-Clone/blob/main/ImagesReadME/takePhoto.gif)
+![Upload](https://github.com/afaf98/IG-Clone/blob/homeProfile/ImagesReadME/uplaod.gif)
 
 ##### - Profile page
 
-![Profile](https://github.com/afaf98/IG-Clone/blob/main/ImagesReadME/profile.gif)
+![Profile](https://github.com/afaf98/IG-Clone/blob/homeProfile/ImagesReadME/profile.gif)
+
+#### - List of users using the app
+
+![Users](https://github.com/afaf98/IG-Clone/blob/homeProfile/ImagesReadME/users.gif)
 
 ### Code Example
 

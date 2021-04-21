@@ -44,7 +44,7 @@ export default function Users() {
 
   return (
     <div className="users-page">
-      <h2>All users using this AMAZING App!</h2>
+      <h2 className="users-title">All users using this AMAZING App!</h2>
       <div className="users-box">
         {users.length === 0 && <h2>Loading..</h2>}
         {users.map((user, index) => {

@@ -1,10 +1,9 @@
 import "./App.css";
-import Footer from "./Components/Footer/Footer";
-import HomePage from "./Components/Homepage";
+import Homepage from "./Components/Homepage";
 import NavBar from "./Components/Navbar/NavBar";
 import { Switch, Route } from "react-router-dom";
 import SignupPage from "./Components/Auth/SignupPage";
-import HomeUser from "./Components/HomeUser/HomeUser";
+import Feed from "./Components/Feed/Feed";
 import { TokenProvider } from "./context/useToken";
 import { NewPictureProvider } from "./context/newPictureContext";
 
@@ -21,10 +20,9 @@ function App() {
       <TokenProvider>
         <NewPictureProvider>
           <NavBar />
-          <Footer />
           <Switch>
             <Route exact path="/">
-              <HomePage />
+              <Homepage />
             </Route>
             <Route path="/users">
               <Users />
@@ -36,7 +34,7 @@ function App() {
               <SignupPage />
             </Route>
             <PrivateRoute path="/home">
-              <HomeUser />
+              <Feed />
             </PrivateRoute>
             <PrivateRoute path="/upload">
               <UploadPicture />

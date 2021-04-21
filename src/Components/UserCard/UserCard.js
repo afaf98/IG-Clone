@@ -15,7 +15,11 @@ export default function UserCard({
 
   return (
     <div className="user-card">
-      <FontAwesomeIcon icon={faAddressCard} />
+      {!user.latestImage ? (
+        <FontAwesomeIcon icon={faAddressCard} />
+      ) : (
+        <img className="profile-Image" src={user.latestImage} alt="profile" />
+      )}
       <div className="user-info">
         <p className="user-text">{user.firstName}</p>
         <p className="user-text">{user.lastName}</p>

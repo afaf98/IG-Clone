@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
 }
 
 .preview-image {
@@ -22,39 +21,48 @@
 }
 .form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 50vh;
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .upload-button {
-  font-size: 4rem;
-  color: #397ee6;
+  font-size: 100px;
+  color: white;
   background-color: transparent;
   border: 0;
-  width: 40%;
-  height: 20%;
 }
 
 .image-preview-box {
-  height: 100%;
-  width: 100%;
-  /* margin: 50px; */
+  height: 40vh;
+  width: 50vw;
+  border-radius: 5px;
+  object-fit: cover;
+  box-shadow: 0 7px 8px -4px rgb(0 0 0 / 20%), 0 12px 17px 2px rgb(0 0 0 / 14%),
+    0 5px 22px 4px rgb(0 0 0 / 12%);
+  margin-top: 100px;
+  margin-bottom: 30px;
+  object-fit: contain;
 }
+
 .progress-bar-container {
   height: 200px;
   width: 200px;
   margin: 100px;
+  color: white;
 }
 
-.title {
+.title-upload {
   margin-top: 70px;
   margin-bottom: -70px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #5a5858;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 100px;
 }
 
 .display-none {
@@ -75,7 +83,7 @@
 .file-input + label {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #397ee6;
+  color: white;
 }
 
 .file-input:focus + label,
@@ -94,26 +102,21 @@
 
 .choose-file-icon {
   background-color: transparent;
-  font-size: 4rem;
-  color: #397ee6;
+  font-size: 100px;
+  color: white;
   background-color: transparent;
   border: 0;
-  width: 40%;
-  height: 20%;
-  margin-bottom: -30px;
-  margin-right: 50px;
 }
 .choose-file-text {
   font-size: 1.5rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #397ee6;
+  color: white;
   padding: 3px;
-  margin-right: -100px;
-  margin-left: 30px;
+  font-style: italic;
   margin-bottom: 20px;
-  border: thin solid #397ee6;
+  border: thin solid white;
   background-color: transparent;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -124,4 +127,120 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+@media only screen and (max-width: 1030px) {
+  .image-preview-box {
+    width: 80vw;
+    height: 80vh;
+    margin-top: 20px;
+  }
+  .title-upload {
+    font-size: 60px;
+    margin-top: 130px;
+  }
+  .choose-file-icon {
+    font-size: 80px;
+  }
+  .choose-file-text {
+    font-size: 50px;
+  }
+  .upload-button {
+    font-size: 80px;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .image-preview-box {
+    width: 70vw;
+    height: 80vh;
+    margin-top: 20px;
+  }
+  .title-upload {
+    font-size: 40px;
+    margin-top: 120px;
+  }
+  .choose-file-icon {
+    font-size: 50px;
+  }
+  .choose-file-text {
+    font-size: 30px;
+  }
+  .upload-button {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .image-preview-box {
+    width: 80vw;
+    height: 80vh;
+    margin-top: 20px;
+  }
+  .title-upload {
+    font-size: 40px;
+    margin-top: 100px;
+  }
+  .choose-file-icon {
+    font-size: 60px;
+  }
+  .choose-file-text {
+    font-size: 30px;
+  }
+  .upload-button {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .image-preview-box {
+    width: 80vw;
+    height: 80vh;
+    margin-top: 20px;
+  }
+  .title-upload {
+    font-size: 30px;
+    margin-top: 70px;
+  }
+  .choose-file-icon {
+    font-size: 50px;
+  }
+  .upload-button {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .image-preview-box {
+    width: 80vw;
+    height: 80vh;
+    margin-top: 20px;
+  }
+  .title-upload {
+    font-size: 30px;
+    margin-top: 50px;
+  }
+  .choose-file-icon {
+    font-size: 50px;
+  }
+  .upload-button {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .image-preview-box {
+    width: 80vw;
+    height: 80vh;
+    margin-top: 20px;
+  }
+  .title-upload {
+    font-size: 25px;
+    margin-top: 70px;
+  }
+  .choose-file-icon {
+    font-size: 30px;
+  }
+  .choose-file-text {
+    font-size: 20px;
+  }
+  .upload-button {
+    font-size: 50px;
+  }
 }
