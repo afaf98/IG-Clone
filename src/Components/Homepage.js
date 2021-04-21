@@ -7,8 +7,10 @@ import FilterPictureBack from "./CardLayouts/FilterPictureBack";
 import PostedPictureFront from "./CardLayouts/PostedPictureFront";
 import PostedPictureBack from "./CardLayouts/PostedPictureBack";
 import "./Homepage.css";
+import { useHistory } from "react-router";
 
 export default function Homepage() {
+  const history = useHistory();
   return (
     <div className="homepage">
       <div className="welcome">
@@ -32,7 +34,12 @@ export default function Homepage() {
         />
       </div>
       <div className="buttons-home">
-        <button>Create an account</button>
+        <button
+          className="home-button-create"
+          onClick={() => history.push("/signup")}
+        >
+          Create a new account
+        </button>
       </div>
     </div>
   );
