@@ -5,7 +5,7 @@ import getVideo, {
   stop,
 } from "../../services/getVideo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCamera, faCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import useNewPicture from "../../context/newPictureContext";
 
 import "./TakePhoto.css";

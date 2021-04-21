@@ -15,7 +15,6 @@ export default function LoginForm() {
   });
   const { token, auth } = useToken();
   const onSubmit = async (data) => {
-    console.log(data);
     const { status, message } = await auth(data, "login");
     setFeedback({ status: status, message: message });
   };
