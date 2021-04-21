@@ -4,7 +4,7 @@ This app allows you to upload or take pictures and share it with all your follow
 
 ## [📸 Try the App here 🤳 ](https://photosharing.netlify.app)
 
-![Preview](https://github.com/afaf98/IG-Clone/blob/main/ImagesReadME/home.gif)
+![Preview](https://github.com/afaf98/IG-Clone/blob/homeProfile/ImagesReadME/homeview.gif)
 
 ### Table of contents
 
