@@ -8,7 +8,6 @@ export default async function addFollower(token, idFollowing) {
     },
     url: `${process.env.REACT_APP_DEV_SERVER}/followers/${idFollowing}`,
   });
-  console.log("response followers", response.data);
   return response.data;
 }
 
@@ -20,7 +19,6 @@ export async function getFollowers(token) {
     },
     url: `${process.env.REACT_APP_DEV_SERVER}/followers`,
   });
-  console.log("response followers", response.data);
   return response.data.followers;
 }
 
@@ -32,6 +30,5 @@ export async function unfollow(token, idFollower) {
     },
     url: `${process.env.REACT_APP_DEV_SERVER}/followers/${idFollower}`,
   });
-  console.log("response followers", response.data);
   return response.data.followers;
 }

@@ -8,7 +8,6 @@ import useToken from "../../context/useToken";
 export default function NavBar() {
   const { token } = useToken();
 
-  console.log("token", token);
   return (
     <nav className="topnav">
       <a className="topnav-logo-container" href={token ? "/home" : "/"}>
