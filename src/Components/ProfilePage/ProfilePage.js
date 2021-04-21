@@ -2,47 +2,69 @@ import React, { useState, useEffect } from "react";
 import getProfilePictures from "../../services/getProfilePictures";
 import useToken from "../../context/useToken";
 import "./ProfilePage.css";
+import { useHistory } from "react-router";
+import moment from "moment";
 
 export default function ProfilePage() {
   const { token } = useToken();
   const [images, setImages] = useState();
+  const [profileImage, setProfileImage] = useState("");
   const [status, setStatus] = useState("Loading..");
   const [user, setUser] = useState();
+  const history = useHistory();
 
   useEffect(() => {
     const responseImages = async () => {
       const data = await getProfilePictures(token);
-      console.log("Data", data);
       setImages(data.images);
       setUser(data.user);
+      setProfileImage(data.profileImage);
+      setStatus(null);
     };
     responseImages();
   }, [token]);
-  console.log("Use", images);
+
+  function uploadPicture() {
+    history.push("/choose");
+  }
+
   return (
     <div className="profile-page">
       <div className="profile-info">
-        {/* <p>Profile image</p> */}
-        <img src="https://via.placeholder.com/150" />
-        <p className="name-user">{!user ? status : user.name}</p>
-        <p className="name-user">{!user ? status : user.lastName}</p>
         <div className="counters-followers-posts">
-          <div className="c-posts">Posts</div>
-          <div className="c-followers">Followers</div>
-          <div className="buttons">
-            <button>Follow</button>
-          </div>
+          <p className="name-user">{user && user.name}</p>
+          <p className="name-user">{user && user.lastName}</p>
         </div>
+        <button onClick={uploadPicture} className="profileButton">
+          <img
+            src={
+              profileImage
+                ? profileImage
+                : "https://www.nicepng.com/png/detail/128-1280406_view-user-icon-png-user-circle-icon-png.png"
+            }
+            className={profileImage ? "profileImage" : "noProfileImage"}
+            alt="profile"
+          />
+          <br />
+          Edit your profile picture
+        </button>
       </div>
       <div className="image-container">
         {!images
           ? status
           : images.map((image) => {
+              // console.log("image", image);
               return (
-                <div className="image-card ">
-                  <img src={image.url} className="image" />
-                  <label className="label-description">Description :</label>
-                  <p>{image.name}</p>
+                <div className="image-card " key={image.id}>
+                  <img
+                    src={image.url}
+                    className="image"
+                    alt={`post-${image.id}`}
+                    key={image.id}
+                  />
+                  <label className="label-description">
+                    {moment(image.createdAt).startOf().fromNow(true)} ago
+                  </label>
                 </div>
               );
             })}

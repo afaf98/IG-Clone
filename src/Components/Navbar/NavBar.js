@@ -11,9 +11,9 @@ export default function NavBar() {
   console.log("token", token);
   return (
     <nav className="topnav">
-      <div className="topnav-logo-container">
+      <a className="topnav-logo-container" href={token ? "/home" : "/"}>
         <FontAwesomeIcon size="lg" icon={faExpand} />
-      </div>
+      </a>
       <div className="topnav-links-container">
         <Navbaritems item="Users" path="/users" />
         {token && <Navbaritems item="Upload" path="/choose" />}

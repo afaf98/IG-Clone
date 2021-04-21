@@ -44,8 +44,6 @@ export const handleFileUpload = async (
     },
   })
     .then((resp) => {
-      // our mocked response will always return true
-      // in practice, you would want to use the actual response object
       setUploadStatus(true);
       setResponse(resp);
       setUploading(false);

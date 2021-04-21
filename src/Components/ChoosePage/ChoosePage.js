@@ -10,7 +10,7 @@ export default function ChoosePage() {
 
   return (
     <div className="choose-page">
-      <h2 className="title">Upload a new Picture</h2>
+      <h2 className="title">Share your new Picture!</h2>
       <p className="under-title">What would you like?</p>
       <div className="button-field">
         <div className="f-column">

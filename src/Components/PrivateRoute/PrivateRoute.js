@@ -16,7 +16,7 @@ export default function PrivateRoute({ path, children, ...props }) {
       }
     }
     isValidToken();
-  }, []);
+  }, [checkToken, history, logout]);
 
   if (!token) {
     return <Redirect to="/login" />;

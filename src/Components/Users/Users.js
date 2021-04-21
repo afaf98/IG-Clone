@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import getUsers from "../../services/getUsers";
 import useToken from "../../context/useToken";
 import UserCard from "../UserCard/UserCard";
@@ -13,23 +13,22 @@ export default function Users() {
 
   async function followButton(id) {
     await addFollower(token, id);
-
-    // setFollowers(followers.remove);
     setFollowers([...followers, id]);
   }
 
   async function unfollowButton(id) {
     await unfollow(token, id);
-    var index = followers.indexOf(id);
-    const updatedFollowers = followers.map((follow) => {
-      if (follow === id) {
-        return;
+    const updatedFollowers = followers.filter((follow) => {
+      if (follow !== id) {
+        return true;
+      } else {
+        return false;
       }
     });
     setFollowers(updatedFollowers);
   }
 
-  async function usersData() {
+  const usersData = useCallback(async () => {
     const response = await getUsers();
     setUsers(response);
     if (token) {
@@ -37,15 +36,15 @@ export default function Users() {
       const followerIds = followers.map((follower) => follower.id);
       setFollowers(followerIds);
     }
-  }
+  }, [token]);
 
   useEffect(() => {
     usersData();
-  }, []);
+  }, [usersData]);
 
   return (
     <div className="users-page">
-      <h2>All users using this AMAZING App!</h2>
+      <h2 className="users-title">All users using this AMAZING App!</h2>
       <div className="users-box">
         {users.length === 0 && <h2>Loading..</h2>}
         {users.map((user, index) => {

@@ -1,9 +1,14 @@
 .footer {
-  height: 8vh;
+  height: 5vh;
   background-color: #69a1f3;
   display: flex;
   flex-direction: row;
   margin-bottom: 0;
+  /* position: ; */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-left {

@@ -6,7 +6,8 @@
 .image-container {
   border-top: 1px solid lightblue;
   padding: 30px;
-  margin-top: 70px;
+  margin-top: 10px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -16,58 +17,212 @@
 .image-card {
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 40px;
   margin-top: 30px;
   width: 300px;
-  border-radius: 4px;
-  background-color: lightblue;
-  box-shadow: 9px 9px 5px lightgray;
+  height: 230px;
+  border-radius: 5px;
+  background-color: #88b4f6;
+  box-shadow: 0 7px 8px -4px rgb(0 0 0 / 20%), 0 12px 17px 2px rgb(0 0 0 / 14%),
+    0 5px 22px 4px rgb(0 0 0 / 12%);
 }
 
 .image {
-  border-radius: inherit;
-  box-shadow: 9px 9px 5px rgb(153, 186, 197);
+  border-radius: 5px;
+  object-fit: scale-down;
+  height: 220px;
+  width: 300px;
 }
-
 .label-description {
   margin-top: 15px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: rgb(160, 157, 157);
+  color: white;
+  font-style: italic;
   font-size: 16px;
 }
-
 .name-user {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 25px;
-  color: rgb(30, 142, 194);
+  color: white;
   text-align: center;
-  margin: 20px;
+  font-style: italic;
+  margin: 15px;
 }
-
 .profile-info {
   margin: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 70px;
 }
 .counters-followers-posts {
   display: flex;
   flex-direction: row;
+  margin-top: 10px;
 }
-.c-posts {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
+.profileImage {
+  width: 150px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 7px 8px -4px rgb(0 0 0 / 20%), 0 12px 17px 2px rgb(0 0 0 / 14%),
+    0 5px 22px 4px rgb(0 0 0 / 12%);
+  margin: 5px;
 }
-.c-followers {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
+.noProfileImage {
+  width: 50%;
+  height: 30%;
+  box-shadow: 0 7px 8px -4px rgb(0 0 0 / 20%), 0 12px 17px 2px rgb(0 0 0 / 14%),
+    0 5px 22px 4px rgb(0 0 0 / 12%);
+  border-radius: 30px;
 }
-.buttons {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
+.profileButton {
+  width: 20%;
+  height: 50%;
+  background-color: transparent;
+  border: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  color: white;
+  font-style: italic;
+}
+@media only screen and (max-width: 1030px) {
+  .profileImage {
+    width: 200px;
+    height: 150px;
+  }
+  .profileButton {
+    height: 250px;
+    width: 200px;
+    font-size: 15px;
+    text-align: center;
+  }
+  .label-description {
+    font-size: 15px;
+    text-align: center;
+  }
+  .name-user {
+    font-size: 25px;
+  }
+  .profile-info {
+    margin-top: 90px;
+    margin-right: 100px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .image-card {
+    height: 150px;
+    width: 200px;
+    margin-top: 15px;
+  }
+  .image {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .profileImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+  }
+  .profileButton {
+    height: 150px;
+    width: 100px;
+    font-size: 10px;
+    text-align: center;
+  }
+  .label-description {
+    font-size: 15px;
+    text-align: center;
+  }
+  .name-user {
+    font-size: 20px;
+  }
+  .profile-info {
+    margin-top: 50px;
+    margin-bottom: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-card {
+    height: 150px;
+    width: 200px;
+    margin-top: 15px;
+  }
+  .image {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .profileImage {
+    border-radius: 7px;
+    width: 100px;
+    height: 80px;
+  }
+  .profileButton {
+    height: 150px;
+    width: 100px;
+    font-size: 10px;
+    text-align: center;
+  }
+  .label-description {
+    font-size: 15px;
+    text-align: center;
+  }
+  .name-user {
+    font-size: 20px;
+  }
+  .profile-info {
+    margin-top: 30px;
+    margin-right: 50px;
+  }
+  .image-card {
+    height: 170px;
+    width: 270px;
+    margin-top: 15px;
+  }
+  .image {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .profileImage {
+    width: 80px;
+    height: 80px;
+  }
+  .profileButton {
+    height: 150px;
+    width: 100px;
+    font-size: 10px;
+    text-align: center;
+  }
+  .label-description {
+    font-size: 15px;
+    text-align: center;
+  }
+  .name-user {
+    font-size: 20px;
+  }
+  .profile-info {
+    margin-top: 30px;
+    margin-bottom: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-card {
+    height: 150px;
+    width: 200px;
+    margin-top: 15px;
+  }
+  .image {
+    height: 100%;
+    width: 100%;
+  }
 }
